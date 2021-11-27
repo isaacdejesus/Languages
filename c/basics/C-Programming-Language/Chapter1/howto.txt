@@ -1,0 +1,50 @@
+All programs are compiled using:
+gcc name.c
+./a.out
+====================================================================================
+Comments
+====================================================================================
+//
+/*    */
+====================================================================================
+escape sequences
+====================================================================================
+\n advances to the next line
+\t tab
+\b backspace
+\" double quotes
+\\ for \
+===================================================================================
+printf
+===================================================================================
+printf is a general purpose output formatting function.
+ex. printf("%d\t%d\n", fahr, celsius);
+First %d tells function of print fahr as a decimal
+Second %d tells function to print celcius as a decimal
+\t tells function to place tab inbetween the %d's
+\n new line
+
+It is possible to specify the width of the column
+ex. printf("%3d %6d\n", fahr, celsius);
+%3d tells function to print farh in a field 3 digits wide
+%6d tells function to print celsius in a field 6 digits wide
+
+printf("%3.0f %6.1f\n", fahr, celsius);
+%3.0f tells function to print fahr as a floating point 3 characters wide with no decimal point/fraction digits
+%6.1f tells function to print celcius as a floating point 6 characters  wide with one digit after decimal point
+
+printf("%.0f\n", nc);
+%.0f suppresses the printing of decimal point
+===================================================================================
+Arithmetic
+==================================================================================
+Integer division truncates computations such as 5/9 to 0
+However, division between floats 5.0/9.0 is not truncated
+If two operands are ints, integer operation is performed.
+If one of the operands is float, then the non-float will be converted to floating point.
+Therefore, 5.0/9, would not be truncated
+==================================================================================
+getchar() - reads input from text stream
+putchat() - prints char
+
+

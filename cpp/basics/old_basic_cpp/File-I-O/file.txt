@@ -1,0 +1,2 @@
+ This is how you write to file
+Sometimes chicken potato soup is good for you
