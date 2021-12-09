@@ -1,0 +1,251 @@
+I/O:
+>> extraction operator
+<< insertion operator
+cin>>
+cout<<
+-----------------------------------------------------------------------------
+I/O is a sequence of bytes called a stream from source to destination.
+Input stream: sequence from input device to computer.
+Output stream: sequence from computer to output device.
+#include <iostream> contains definitions for ostream and istream data types
+iostream also contains two variable declarations: cin and cout
+cin - common input
+cout - common output
+declarations look like:
+istream cin;
+ostream cout;
+
+A stream variable can be either an input stream or output stream.
+istream - input stream variable
+ostream - output stream variable
+-------------------------------------------------------------------------------
+cin and extraction operator >>
+=============================================================================
+Syntax: cin >> variable >> variable;
+A singlle cin can read multiple inputs by reusing >>.
+Every >> extracts data from input stream
+Ex-> cin >> payRate >> hoursWorked;
+>> skips white space and maps the input to the correct variable
+
+istream member functions: get, ignore, putback, peek.
+----------------------------------------------------------------------------------
+cin and the get function
+---------------------------------------------------------------------------------
+get function takes next input character and saves it. Including whitespace
+Syntax: cin.get(varChar)
+Ex-> input is: A 25
+cin.get(ch1);  //will store A in ch1
+cin.get(ch2);  //will store " " in ch2
+cin >> num;    //will store 25 in num
+
+Useful because >> skips whitespace. If we had done
+cin >>ch1>>ch2>>num
+>> would have skipped and not saved the " "
+----------------------------------------------------------------------------------
+cin and ignore function
+=================================================================================
+ignore function allows to discard portion of input
+Syntax: cin.ignore(intExp, chExp);
+
+intExp, tells function to ignore that many characters in the line.
+chExp, tells function to ignore all characters until that char is found.
+Ex-> cin.ignore(100, '\n');
+Tells the function to ignore the next 100 chars or until it finds the newline.
+
+Ex->
+int a, b;
+input: 
+25 67 89 43 72
+12 78 34
+
+code:
+cin>>a;
+cin.ignore(100, '\n');
+cin>>b;
+
+Output:
+a will containe 25
+ignore functing will ignore all characters until after the newline
+b will contain 12
+
+cin.ignore();  //will ignore the next char
+-----------------------------------------------------------------------------------------
+putback and peek functions
+========================================================================================
+Syntax:
+istreamVar.putback(ch);   //allows you to put char back obtained via get
+ch = istreamVar.peek();   //allows you to check next character without removing it from stream
+Ex-> 
+cin.get(ch);
+cin.putback(ch);
+ch = cin.peek();
+
+Input failure state is entered when wrong datatype is entered to stream
+Exp->
+var being of type int and trying to feed it a char
+the stream can be cleared to recover back to working state using:
+cin.clear()
+--------------------------------------------------------------------------------------------
+Output and formatting
+========================================================================================
+Syntax:
+cout << expression or manipulator << expression or manipulator;
+The expression is evaluated and manupulator used to format output.
+endl is a manipulator.
+Other manipulators include: setprecision, fixed, showpoint and setw.
+------------------------------------------------------------------------------------------
+setprecision manipulator
+======================================================================================
+requires: #include <iomanip>
+Syntax: setprecision(n), where n is number of decimal places
+Ex-> cout<< setprecision(3);
+
+---------------------------------------------------------------------------------------
+fixed manipulator
+====================================================================================
+fixed sets the decimal places to a fixed value until disabled.
+Syntax: cout << fixed;
+unsetf //to disable fixed
+scientific to output in scientific format
+Syntax: cout << scientific
+Both scientific and fixed set decimal places to 6 places until changed
+
+Ex->
+cout<<32.3333;  //will cut off some of the decimal portion
+cout<<scientific; //everything printed after this will be in this mode
+cout<< 3.993883;  //will print all decimal places
+cout<<fixed;   //same as scientific
+cout<<3.223424//
+----------------------------------------------------------------------------------
+showpoint manipulator
+=-============================================================================
+Syntax: cout<<shotpoint;
+show trailing zeros after decimal point
+They can be combine:
+cout<<fixed<<showpoint;
+cout<<setprecision(2)<<32.33324;  //will just print 2 decimal places
+---------------------------------------------------------------------------------
+setw
+===================================================================================
+Have output value take x space/columns.
+Ex-> cout<<setw(5) << 10;
+The above will print 10 but take 5 spaces. The remaining 3 spaces are filled with blanks.
+Output is right justified. Meaning empty space will be to the left.
+-------------------------------------------------------------------------------
+Other output formatters
+=================================================================================
+setfill manipulator
+--------------------------------------------------------------------------------
+setfill can be used to specify what to use to fill empty space left by setw
+by default unused space/columns are filled with space/blanks
+Syntax: ostreamVar << setfill(ch);
+
+Ex->: 
+cout << setfill('#');
+setw(5) << 10;
+Will fill the 3 empty spaces with ##
+###10
+-----------------------------------------------------------------------------------
+left and right manipulators
+----------------------------------------------------------------------------------
+by default setw is justified right. This can be changed:
+Syntax:
+ostreamVar << left;               //justify left
+ostreamVar << right;              //justify right
+ostreamVar <<unsetf(ios::left);   //disable left/set to defaault
+cout<<unsetf(ios::left);          //set to default
+cout<< right;                     //set justification to right
+cout<<setfill('$');
+cout<<setw(5)<< 10;
+Output:
+10$$$
+------------------------------------------------------------------------------------
+i/o and strings
+-----------------------------------------------------------------------------------
+>> operator can also be used to read a string given there is a string var to save it to.
+string name;
+cin >> name;
+input: potato man
+output: name = potato.
+>> stops reading at whitespace.
+If we want to get an entire string containing spaces use getline
+Syntax: getline(istreamVar, strVar);
+getline will read until finding \n but will not store the \n to variable
+Ex->
+Input: " Hello I am the great potato man!"
+getline(cin, str);
+output: str = " Hello I am the great potato man!"
+------------------------------------------------------------------------------------
+file i/o
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+j
+
+

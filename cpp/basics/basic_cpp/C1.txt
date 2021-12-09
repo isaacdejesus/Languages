@@ -1,0 +1,76 @@
+Hardware: CPU, main memory/RAM, i/o devices and secondary storage.
+
+cpu is the workhorse of the computer. Arithmetic and logical operations 
+performed by cpu. 
+
+Main memory or random access memory is directly connected to the CPU.
+Programs/all information must be loaded from secondary storage into
+RAM in order for the CPU to execute or perform operations on them. 
+Meaning, all data required by a program must also be brought to RAM.
+Information is reset/deleted from RAM whenever PC is turned off.
+
+Memory is ordered sequentially, called memory cells. Each cell has a unique address.
+Information in cells can be accessed via address. 
+
+RAM stores everything as sequences of 0s and 1s. 
+Memory addresses are also sequences of 0s and 1s.
+
+Secondary storage - Permanently stores information.
+ex-> HDD, flashdrives, ssds, etc
+
+I/O - ex-> keyboard, mouse, screen, printer
+
+Language of the computer:
+There are two types of electrical signals: 
+Analog - Continuous wave forms
+Digital - 0s and 1s. If voltage is present 1. Absence of voltage is 0
+Computers use digital signals. Therefore the lanugage of computers is
+machine language composed of 0s and 1s depending on presence or absence of voltages.
+0/1 are called binary digits and a sequence of 0s and 1s called binary code.
+Bit - A binary digit 0 or 1.
+Byte - Sequence of 8 bits. 00001111
+
+The ASCII standard consists of 128 characters numbered 0 - 127.
+ASCII encodes characters using 7 bits.
+Every character is encoded to a different sequence of 7 bits.
+A is encoded to 1000001, which also evaluates to 65
+Computers use a byte or 8 bits to represent characters.
+Therefore, we add a leading 0 to the ASCII value to make it 8 bits.
+A ->1000001 becomes 01000001
+
+Machine language provides instructions in bits.
+LOAD - 100100
+Multiplication - 100110
+STORE - 100010
+
+If we want to perform the following calculation in machine code:
+wages = rate * hours
+
+100100 010001
+100110 010010
+100010 010011
+
+Assembly language made instructions easier to remember. Instead of typing binary 
+instructions became:
+LOAD, STOR, MULT, ADD, SUB
+
+The above opperation can be performed as:
+LOAD rate
+MULT hours
+STOR wages
+
+The assembler program translates assembly language to equivalent machine code.
+
+In moder languages such as C++ we can simply write:
+wages - rate * hours
+
+The Compiler translates instructions written in high level code to machine code.
+Steps of a program:
+1 - Write code in high level language
+2 - Given a source code the compiler will: First run the preprocessor
+#include <iostream> is a preprocessor directive and are processed by the preprocessor.
+3 - Then the compiler will check for syntax. If no syntax error compiler will turn
+code into machine code-> called object program. 
+4 - Linker - combines the object program with programs/functions from libraries.
+5 - Loader - Loads executable program into main memory.
+6 - Execute the program

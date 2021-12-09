@@ -1,0 +1,299 @@
+->Expression
+-strings are expressions that evaluate to itself
+-arithmetic expressions evalute according to rules of arithmetic operations
+
+-return 0, returns control to OS once program terminates
+
+A program is a collection of subprograms called functions which in turn are composed of
+multiple statements or expressions. Some functions are predefined/standard provided by the system.
+
+
+#include <iostream> gives access to various built in functions such as
+cout -> generate output
+endl -> newline
+
+using namespace std; allows us to used cout and endl without std:: prefix
+
+<< is the stream insertion operator. Allows us to insert input to cout or cin
+------------------------------------------------------------------------------
+Comments:
+-----------------------------------------------------------------------------
+// for single line comment
+/* */ multiline comment
+
+Special Symbols:
+-----------------------------------------------------------------------------
++ -  * /
+. ; ? ,
+<= != == >=
+
+Reserved words:
+------------------------------------------------------------------------------
+int, float, double, char, const, void, return
+
+------------------------------------------------------------------------------
+Data Type -  Set of values along with a set of operations
+------------------------------------------------------------------------------
+C++ data types: Simple, structured and pointers.
+
+Simple data types:
+Integral: Whole Numbers
+Floating-Point: Numbers with decimals
+Enumeration: User def data type
+
+Integral further classified into: char, short, int, long, bool, unsigned char, 
+unsigned short, unsigned int, unsigned long.
+
+
+char data type represents ints between -128 to 127
+int data type represents ints between -2147483648 and 2147483647
+short data type represents ints between -32768 and 32767
+
+int data type - 234, 0, 44
+bool data type - Only has two values true and false. 
+char data type - Used to represent characters such as letters, digits and special symbols.
+char data type can represent every key on keyboard. 
+ex -> 'a', '*', '+'
+Values are defined by the ASCII standard with 128 values with each representing a different
+character. 65 = 'A', 66 = 'B'
+floating point data type - Used to represent real numbers. 
+There are 3 data types to manipulate decimal numbers: float, double, long double
+->float: 4 bytes, with max # of significant digits/# of decimal places is 6-7
+-> double: 8 bytes with max # of significant digits/# of decimal places is 15 
+
+Max number of significant digits is called precision. 
+floats are called single precision and double are double presicion.
+Best to use double type is need accuracy >=7 decimal places.
+
+========================================================================
+Arithmetic operators and precedence
+=======================================================================
+There are 5 arithmetic operators:
++ - addition
+- - substraction
+* - multiplication
+/ - division
+% - modulus or remainder
+
+integer division truncates the fractional part.
+
+Operands - Numbers in the arithmetic expression
+
+Unary operators - Only have one operand. Ex-> -3
+Binary operator - Has two operands. Ex-> 2 * 2
+
+Binary operators - -, +, *, /, %
+Unary operators - -, +
+
+Order of precedence:
+() > *, / , % > -, +
+Place expressions in () to give it higher precedence!
+Precedence moves left to right if all operators are same precedence!
+
+It is possible to perform char arithmetic but uses ASCII values
+'8' + '7' = 56 + 55 = 111 
+8 + 7 = 15
+Also, MAX ASCII value is 128. Therefore, '8' * '7' = 56 * 55 = 3080 -> error
+
+Integral expression constains only whole numbers and result is an interger
+Floating point expression contains decimals and result is decimal.
+Mixed expression contains at least one decimal and result is decimal.
+=======================================================================
+Type conversion/Casting
+-----------------------------------------------------------------------
+Implicit type coercion happens in mixed expression to turn integers to floats
+Cast operator can be used to perform type conversion or type casting.
+static_cast<dataTypeName>(expression)
+Ex-> static_cast<int> (7.9)
+Ex-> static_cast<double>(15/2)
+
+static_cast is an improved version of c-like casting:
+Ex-> double(6)
+
+static_cast can also cast char
+Ex-> static_cast<int>('A') == 65
+Ex-> static_cast<char>(65) == 'A'
+========================================================================
+String data type:
+------------------------------------------------------------------------
+String is programmer defined data type.
+String is composed of a sequence of zero or more chararacters. 
+Strings are enclosed in ""
+String with no characters is null or empty. Ex-> ""
+Length of a string is the number of chars in it.
+======================================================================
+Input
+----------------------------------------------------------------------
+In order to instruct the computer to allocate memory we need to indicate 
+both the datatype and the name to be used to store said information. 
+
+const should be used when value is to remain fixed and should not change.
+Do it to prevent accidentally changing the value
+Ex-> const datatype identifier = value;
+Ex-> const int PAY_RATE = 9.5;
+Conventionally, in C++ we use all caps and underscores for const variables!!!!
+const tell compiler to place value in memory and that it should never change!
+
+Variables are usually declared as such: amountDue;
+= is the assignment operator.
+varName = 3 * 9 + 3;
+First evaluates the expression to the right and saves result in the variable to the left.
+
+Input read statement:
+cin>>variable>>variable...;
+>> stream extractionoperator
+Ex-> cin >> feet >> inches;
+
+Increment operator ++
+Decrement operator --
+
+Two forms:
+Pre-increment/decrement: ++/--varName
+Post-increment/decrement:varName++/--
+
+Pre-increment/decrement-> value is changed then used in the expression
+Post-increment/decrement-> expression is evaluated then value is increased.
+
+Ex-> 
+x = 5;
+y = x++;
+Output:y = 5, x = 6.
+
+---------------------------------------------------------------------------------
+Output
+=================================================================================
+cout << expression or manupulator;
+<< stream insertion operator
+
+The expression is eval and value printed to output device.
+Example of manipulator is endl and \n
+Ex-> std::cout<<"Hello \nthere. \nMy name is Isaac.";
+Output: 
+Hello
+there. 
+My name is Isaac.
+
+Common escape sequences:
+\n Newline
+\t tab
+\b backspace
+\r return
+\\ backslash
+\' single ''
+\" double ""
+
+
+-----------------------------------------------------------------------------------
+===================================================================================
+Preprocessor directives:
+-----------------------------------------------------------------------------------
+Every library can be referred by the header file
+iostream library contains functions to perform i/o
+cmath contains useful math functions
+In order to use libraries we need to use preprocessor directives and give names of libraries we need.
+Preprocessor directives are processed by the preprocessor!
+Preprocessor add libraries to the CPP file before compilation.
+All preprocessor commands begin with #, general syntax:
+#include <headerFileName>
+Ex-> #include <iostream>
+
+Compound assignment statements
+---------------------------------------------------------------------------------
++=, -=, *=, /=, %=
+
+Ex->
+x = x * y;
+x *= y;
+
+variable = variable * (expression);
+variable *= expression;
+
+Longer example:
+i = i + 5;
+counter = counter + 1;
+sum = sum + number;
+amount = amount * (interest + 1);
+x = x / (y + 5)
++++++++++++++++++++++++++++++++++++++++
+Becomes:
+i += 5;
+counter += 1;
+sum += number;
+amount *= interest + 1;
+x /= y + 5;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
