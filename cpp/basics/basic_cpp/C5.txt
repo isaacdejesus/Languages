@@ -1,0 +1,29 @@
+Repetition
+file.eof() returns true/false if end of file has been reached.
+Can be used in while loops:
+while( cin )
+{
+    cin>>var;
+}
+
+Also be used with files:
+ifstream infile;
+infile.open('file.txt');
+if(!infile)
+    cout<<"failed to open file."
+while(!infile.eof())
+{
+    infile.get(ch);
+}
+
+
+See page 338 for pallindrone example:
+Two types of variables:
+automatic: created during function call and terminated when function/block ends
+static: remain allocated as long as the program exists.
+Global variables are static
+static variables are automatically initialized.
+Ex-> static int y;   //automatically initialized to 0;
+static var good if we want to declare a var within a function
+and want those values to exist after the function has exited.
+:

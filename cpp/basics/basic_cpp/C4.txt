@@ -1,0 +1,122 @@
+Control structures:
+Sequential, selectively, loops or functions.
+----------------------------------------------------------------------------
+Relational operators
+=============================================================================
+==          equal to
+!=          not equal to
+<           less than
+<=          less than or equal to
+>           greater than
+>=          greater than or equal to
+Relational operators are binary, require two operands and return a boolean: true/false
+Ex-> on characters:
+Recall ASCII: 'A' = 65, 'B' = 66, etc
+'A' > 'B' evalutes to false because 65 > 66
+The above is an example of a boolean logical expression: evaluationg to true/false
+true ----> 1
+false ---> 0
+Relational operators also work on strings:
+Strings are compared char by char until a mistmatch is found.
+Ex->
+"Hello" < "Hi"
+The first letter 'H' match
+Second letter: e < i, therefore "Hi" is greater than "Hello"
+If 2 strings of different size match until the end of the shortest string.
+longest string is greater!
+------------------------------------------------------------------------------
+logical boolean operators
+------------------------------------------------------------------------------
+!           not
+&&          and
+||          or
+Logical operators only take logical values as operands
+|| and && are binary
+! unary
+
+Ex->
+true && true ----> evaluates to true
+true && false ---> evaluates to false
+Precedence of operators:
+!, +, -
+*, /, %
++, -
+<, <=, >, >=
+==, !=
+&&
+||
+=
+
+Expressions are evaluated from left to right.
+Use parenthesis to override precedence!``
+Ex->
+11 > 5 || (6 < 15 && 7 >= 8)
+
+In C++ any int value > 0 evalutes to true
+As a result can use bool variables or ints to store bolean results
+C++ performs short circuit evaluation of logical expressions:
+Evalutes from left to right. 
+Ex->
+false && true;
+Short circuit stops eval after reading false because it knows both values must be true. 
+Returning false without eval the rest of the expression
+-----------------------------------------------------------------------------------
+Extending booleans to opening files
+----------------------------------------------------------------------------------
+ifstream infile;
+infile.open("file.txt")
+if(!infile)     //if it fails to open file
+{
+    cout<<"can not open file";
+    return 1;
+}
+
+-----------------------------------------------------------------------------------
+Ternary operator :?
+----------------------------------------------------------------------------------
+Allows to perform conditional check without if/else
+Syntax: expression1 ? expression2 : expression 3
+If expression1 is true, the result is expression2
+If expression1 is false, the result is expression3
+Ex->
+if(a >= b)
+    max = a;
+else
+    max = b;
+
+becomes:
+max = (a >= b) ? a : b
+--------------------------------------------------------------------------------------
+switch structure
+    -------------------------------------------------------------------------------------------
+switch (expression)
+{
+    case value1:
+        statements;
+        break;
+    case value2:
+        statements;
+        break;
+        .
+        .
+        .
+    default:
+        statement;
+}
+
+expressions is ran through cases, if there is a match, the statements within the case are run.
+break, causes program to exit switch
+if no matches, the default case is run
+
+------------------------------------------------------------------------------------
+assert
+===================================================================================
+assert can be used to debug.
+If expression evaluates to false, program terminates indicating where error occurred
+Syntax: assert(expression)
+#include <cassert>
+Ex-> Division by 0
+asser(denominator);
+quotient = numerator/denominator;
+if denominator is 0, program is halted and error indicates where it happened.
+

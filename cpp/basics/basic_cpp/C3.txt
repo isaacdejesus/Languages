@@ -178,6 +178,41 @@ output: str = " Hello I am the great potato man!"
 ------------------------------------------------------------------------------------
 file i/o
 ----------------------------------------------------------------------------------
+requires the fstream library
+#include <fstream>
+fstream defines 2 new data types:
+ifstream which is equivalent to istream (cin)
+ofstream which is equivalent to ostream (cout)
+recall:
+>>, get, ignore, putback, peek can be used with cin
+<<, setw, setfill, etc can be used with cout
+The same oparations can be used with fstream/files
+However, fstream doesn't declare variables for us, Ex->cin/cout.
+We need to declare the variables called: file stream variables
+ifstream variables used for input
+ofstream varuables used for output
+Steps for working with files:
+1 - #include <fstream>
+2 - declare fstream variables
+    ifstream inData;
+    ofstream outData;
+3 - associate variables with i/o resources
+    Syntax: filestreamvariable.open(sourceName);
+    Where sourcename is the filename
+    Ex->
+    inData.open('file.txt');
+    outData.open('fileout.txt');
+4 - Use >> and << to work with file as usual
+    inData >> var;
+    outData >> "Write stuff to file";
+5 - close the data streams
+    inData.close()
+    outData.close()
+
+If input file doesn't exist: system enters failed state
+If output file doesn't exist: system creates the file
+If output file exists: contents are wiped.
+outData.open("file.txt", ios::app);     //allows you to append to a file
 
 
 
