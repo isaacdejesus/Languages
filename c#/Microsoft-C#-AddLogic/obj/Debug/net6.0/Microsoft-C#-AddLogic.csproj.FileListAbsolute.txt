@@ -1,0 +1,15 @@
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/bin/Debug/net6.0/Microsoft-C#-AddLogic
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/bin/Debug/net6.0/Microsoft-C#-AddLogic.deps.json
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/bin/Debug/net6.0/Microsoft-C#-AddLogic.runtimeconfig.json
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/bin/Debug/net6.0/Microsoft-C#-AddLogic.dll
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/bin/Debug/net6.0/ref/Microsoft-C#-AddLogic.dll
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/bin/Debug/net6.0/Microsoft-C#-AddLogic.pdb
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/obj/Debug/net6.0/Microsoft-C#-AddLogic.csproj.AssemblyReference.cache
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/obj/Debug/net6.0/Microsoft-C#-AddLogic.GeneratedMSBuildEditorConfig.editorconfig
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/obj/Debug/net6.0/Microsoft-C#-AddLogic.AssemblyInfoInputs.cache
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/obj/Debug/net6.0/Microsoft-C#-AddLogic.AssemblyInfo.cs
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/obj/Debug/net6.0/Microsoft-C#-AddLogic.csproj.CoreCompileInputs.cache
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/obj/Debug/net6.0/Microsoft-C#-AddLogic.dll
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/obj/Debug/net6.0/ref/Microsoft-C#-AddLogic.dll
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/obj/Debug/net6.0/Microsoft-C#-AddLogic.pdb
+/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/obj/Debug/net6.0/Microsoft-C#-AddLogic.genruntimeconfig.cache

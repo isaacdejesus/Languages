@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "BOHS35JoC6uP4S/YK1nHfzIU+xuYXFeua08e9EuPmXnqtrjmYA1yDtb/MCTj7APbmpQACYzCY1MYisRBVCbPDQ==",
+  "success": true,
+  "projectFilePath": "/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/Microsoft-learn-C#-WorkingWithData.csproj",
+  "expectedPackageFiles": [
+    "/home/isaac/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.9/microsoft.aspnetcore.app.ref.6.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

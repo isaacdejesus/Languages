@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WLBFqUxqjUEU5DXHz/6PyY/XDlCJX/RPiJ87DhMqfeTNSFf1+tRAFIkIrA6KNM+t+QiZbfrzNZ3Q4hVn5fq71w==",
+  "success": true,
+  "projectFilePath": "/home/isaac/git/Languages/c#/Microsoft-C#-AddLogic/Microsoft-C#-AddLogic.csproj",
+  "expectedPackageFiles": [
+    "/home/isaac/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.9/microsoft.aspnetcore.app.ref.6.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

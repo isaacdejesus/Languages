@@ -1,0 +1,15 @@
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/bin/Debug/net6.0/Microsoft-learn-C#-WorkingWithData
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/bin/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.deps.json
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/bin/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.runtimeconfig.json
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/bin/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.dll
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/bin/Debug/net6.0/ref/Microsoft-learn-C#-WorkingWithData.dll
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/bin/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.pdb
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/obj/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.csproj.AssemblyReference.cache
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/obj/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.GeneratedMSBuildEditorConfig.editorconfig
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/obj/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.AssemblyInfoInputs.cache
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/obj/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.AssemblyInfo.cs
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/obj/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.csproj.CoreCompileInputs.cache
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/obj/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.dll
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/obj/Debug/net6.0/ref/Microsoft-learn-C#-WorkingWithData.dll
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/obj/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.pdb
+/home/isaac/git/Languages/c#/Microsoft-learn-C#-WorkingWithData/obj/Debug/net6.0/Microsoft-learn-C#-WorkingWithData.genruntimeconfig.cache
