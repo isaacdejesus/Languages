@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WK2sZVtGee1o1iYdeLzUYklWrNyQZs23M+v/h6KERqP1D6oI5Q+WIseCegtg87yU+0Jj2nzM7/RWYybwLo7ckA==",
+  "success": true,
+  "projectFilePath": "/home/isaac/git/Languages/c#/Microsoft-Learn-C#/Microsoft-Learn-C#.csproj",
+  "expectedPackageFiles": [
+    "/home/isaac/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.9/microsoft.aspnetcore.app.ref.6.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

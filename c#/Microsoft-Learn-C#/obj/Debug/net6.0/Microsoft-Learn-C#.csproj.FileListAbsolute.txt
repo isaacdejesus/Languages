@@ -1,0 +1,15 @@
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/obj/Debug/net6.0/Microsoft-Learn-C#.csproj.AssemblyReference.cache
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/obj/Debug/net6.0/Microsoft-Learn-C#.GeneratedMSBuildEditorConfig.editorconfig
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/obj/Debug/net6.0/Microsoft-Learn-C#.AssemblyInfoInputs.cache
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/obj/Debug/net6.0/Microsoft-Learn-C#.AssemblyInfo.cs
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/obj/Debug/net6.0/Microsoft-Learn-C#.csproj.CoreCompileInputs.cache
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/bin/Debug/net6.0/Microsoft-Learn-C#
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/bin/Debug/net6.0/Microsoft-Learn-C#.deps.json
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/bin/Debug/net6.0/Microsoft-Learn-C#.runtimeconfig.json
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/bin/Debug/net6.0/Microsoft-Learn-C#.dll
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/bin/Debug/net6.0/ref/Microsoft-Learn-C#.dll
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/bin/Debug/net6.0/Microsoft-Learn-C#.pdb
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/obj/Debug/net6.0/Microsoft-Learn-C#.dll
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/obj/Debug/net6.0/ref/Microsoft-Learn-C#.dll
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/obj/Debug/net6.0/Microsoft-Learn-C#.pdb
+/home/isaac/git/Languages/c#/Microsoft-Learn-C#/obj/Debug/net6.0/Microsoft-Learn-C#.genruntimeconfig.cache
