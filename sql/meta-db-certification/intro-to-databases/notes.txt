@@ -1,0 +1,96 @@
+Evolution of databases:
+Flat Files/.txt
+Hierarchical Database system
+Network Databases
+Relational Database System- Data stored in tables. 
+Object Oriented Databases - Classes are used for each entity in languages such as C++/Java
+NoSQL Databases - Advantages: Higher scalability, Lower cost, Flexible Schema == can store data in different formats, No Complex relationships
+Able to process unstructed and semi-structured data. Used by Social Network. IoT. AI and other applications
+storing mass amounts of unstructured data
+
+Big data - Complex data that can grow exponentially with time. Usually comes from social network sites. 
+Complex data tends to be unstructured or semi-structured. 
+Big data is more powerful than regular data bc allows data to be used to solve problems.
+Insights can be derived from data and improve decision making.
+
+SQL - Structure Query Language
+CRUD - Create, Read, Update, Delete
+SQL - Language used to interact with data on databases to perform CRUD operations
+DBMs - Database Management System allows SQL to communicate with the database
+
+SQL can be divided into subcategories depending on usage:
+DDL - Data Definition Language
+DML - Data Manipulation Language
+DQL - Data Query Language
+DCL - Data Control Language
+
+DDL - Used to create, alter, drop tables
+DML - Used to Insert, Update, and Delete data from tables
+DQL - Used to Read/Retrieve data from tables
+DCL - Used to control GRANT/REVOKE access to data.
+
+Common SQL Commands: 
+DDL COMMANDS: 
+CREATE TABLE table_name(colname1 datatype, colname2 datatype, ...);
+DROP TABLE table_name;  //deletes table or database
+ALTER TABLE table_name ADD(colname datatype);
+ALTER TABLE table_name ADD primarykey(colname);
+TRUNCATE TABLE table_name;  //delete records/empty table. Does not delete table
+--This is how you add comments in SQL
+--Retrieve data from table
+SELECT * FROM table_name;
+
+DML COMMANDS: 
+SELECT * FROM table_name;
+INSERT INTO table_name(col1, col2,...)
+VALUES(val1, val2, ...);
+UPDATE table_name SET col1=val1, col2=val2
+WHERE condition;
+DELETE FROM table_name 
+WHERE condition;
+
+DCL COMMANDS:
+GRANT - Provide access to users to db
+REVOKE - Remove user access
+
+TCL COMMANDS: Used to manage transactions in db
+COMMIT - save work
+ROLLBACK - restore db to last commit
+
+CREATE DATABASE database_name;
+CREATE DATABASE college;
+
+CREATE TABLE table_name;
+CREATE TABLE student;
+
+INSERT INTO table_name (col1, col2, ...) 
+VALUES (val1, val2, ...);
+
+INSERT INTO student (id, first_name, last_name, dob) 
+VALUES (1, isaac, reyes, 2000-09-01);
+
+UPDATE student
+SET dob = '2000-10-12'
+WHERE id = 1;
+
+DELETE FROM student
+WHERE id = 1;
+
+SELECT first_name, last_name
+FROM student
+WHERE id = 1;
+
+Databases are composed of tables composed of rows and cols
+Tables are known as relations/entities/objects
+Tables are composed of cols/fields/attributes
+Each col has a unique name and datatype
+Set of cols make up a row/record/tuple
+Each row is uniquely identified by the primary key
+Primary key can be composed of combination of tables
+Foreign key primary key of another table used to relate tables together
+
+Integrity constraints: There are 3 main integrity constraints
+Key, domain and referantial intergrity constraints
+Key Constraints: Every table should have a  primary key. Primary key should not be null
+Domain Constraints: Rules for values that can be stored in certains columns/fields. Ex. Address can not be stored in phone_number field 
+Referential Integrity Constraints: Data referred via foreign key should exist in other table
