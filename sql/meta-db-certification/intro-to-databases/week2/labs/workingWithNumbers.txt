@@ -1,0 +1,20 @@
+Open terminal
+mysql;
+
+CREATE DATABASE DB_NAME;
+CREATE DATABASE cm_devices;
+
+Select database to use
+use DB_NAME;
+use cm_devices;
+
+Create table
+CREATE TABLE devices( deviceID int, deviceName varchar(50), price decimal);
+
+To check tables in database
+show tables;
+
+To check structure of table
+show columns from tableName;
+show columns from devices;
+

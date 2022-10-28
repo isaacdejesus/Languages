@@ -1,0 +1,4 @@
+Datatypes: Determine acceptable data for each column
+Numeric - Int and Decimal
+String
+Date and time

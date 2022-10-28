@@ -1,0 +1,51 @@
+
+Databases are composed of tables composed of rows and cols
+Tables are known as relations/entities/objects
+Tables are composed of cols/fields/attributes
+Each col has a unique name and datatype
+Set of cols make up a row/record/tuple
+Each row is uniquely identified by the primary key
+Primary key can be composed of combination of tables
+Foreign key primary key of another table used to relate tables together
+
+Integrity constraints: There are 3 main integrity constraints
+Key, domain and referantial intergrity constraints
+Key Constraints: Every table should have a  primary key. Primary key should not be null
+Domain Constraints: Rules for values that can be stored in certains columns/fields. Ex. Address can not be stored in phone_number field 
+Referential Integrity Constraints: Data referred via foreign key should exist in other table
+
+Database structure is how data is arranged in database. 
+Related data is grouped into tables
+Tables consist of rows(tuples) and columns
+
+Logical structure of a database is represented using Entity Relationship Diargram (ERD)
+ERD is a visual representation of how database will be implemented
+There are 3 ways entities can relate to each other:
+One to One
+One to Many
+Many to Many
+
+Physical database structure relationships are established using foreign key.
+Foreign key is primary/unique key in another table
+Ex.
+
+Student                                   Department
+--------------------------------          -----------------------------------
+Stud_Id | Name    | Course     |          |Dept_name              | Stud_Id|
+101     | John    | Computer   |          |CS_Department          | 105    |
+105     | Merry   | AI         |          |CS_Department          | 101    | 
+107     | Sheerio | Biology    |          |Science_Department     | 101    |
+108     | Bisle   | Maths      |          |Maths_Department       | 108    |
+--------------------------------          ----------------------------------
+Stud_Id is primary key in Student table, being used a foreign key in Department table
+Therefore, Stud_Id is used to link/relate tables
+
+*Multivalue attributes should be avoided!
+
+Key attribute used to uniquely id an individual record/tuple
+Candidate key is any attribute that contains a unique value for each row/tuple
+Composite key composed of 2 or more attributes to create unique value for each row/tuple
+Primary key used a candidate key
+Alternate key is a candidate key not selected a primary key
+Foreign key attribute that references a unique/primary key on another table
+
