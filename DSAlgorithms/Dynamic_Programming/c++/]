@@ -1,0 +1,19 @@
+#include<iostream>
+#include<unordered_map>
+
+int gridTraveler(int, int);
+int gridTravelerMemoized(int, int);
+int main()
+{
+
+    return 0;
+}
+int gridTraveler(int m , int n)
+{
+    if(m == 1 && n == 1)
+        return 1;
+    if(m == 0 || n == 0)
+        return 0;
+    return gridTraveler(m - 1, n) + gridTraveler(m, n - 1)
+}
+
