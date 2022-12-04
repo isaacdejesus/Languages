@@ -33,6 +33,7 @@ int main()
     //access elements
     //[] can be used to add new key/value pairs and to access value by key
     //attempting to access non-existent key adds the key to map with value of 0 and return 0
+    //accessing non-existing element with [] will add key/value to map and will return count() of 1 
     std::cout<<map['c'];
     std::cout<<map['a'];
     //adding new key/value
