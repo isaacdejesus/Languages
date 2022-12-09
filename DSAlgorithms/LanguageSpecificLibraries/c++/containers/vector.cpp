@@ -48,7 +48,7 @@ int main()
     //capacity() retuns max size/ number of elements vector can accomodate. It is not current size/number of elements in vector
     //empty() returns bool if vector is empty
     //reserve() request chance in vector capacity to hold at least n elements
-    //resize() if new size is greater than current size, extra elements are deleted
+    //resize() if new size is less than current size, extra elements are deleted
     //if new size is greater than current, elements are added to end to reach size n
     //an extra parameter val can be passed, used to fill empty slots to reach size n
     //here we resize from 3 elements to 10 and set fill vlaue to 0
@@ -74,7 +74,7 @@ int main()
     chars_vector.assign(chars_arr, chars_arr + 3);
     //push_back() adds element to end
     //pop_back() deletes last element
-    //insert() insert element(s) at indicated index
+    //insert() insert element(s) at indicated iterator
     std::vector<char>::iterator it = chars_vector.begin();
     it++;
     //insert(start, value) '.' at index 1
@@ -89,7 +89,7 @@ int main()
     chars_vector.insert(it, chars_vector2.begin(), chars_vector2.end());
     //erase() deletes a single element or range of elements [first, last), not including last
     //current chars_vector = [a, b, c, d, e, $, $, $, ., y, z]
-    //deletes the 6th element == e
+    //deletes the 5th element == e
     chars_vector.erase(chars_vector.begin() + 4);
     //erase the first 3 elements a, b, and c
     chars_vector.erase(chars_vector.begin(), chars_vector.begin() + 3);
