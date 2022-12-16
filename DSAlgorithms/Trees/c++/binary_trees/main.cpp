@@ -14,6 +14,9 @@ int main(int argc, const char** argv) {
     //std::cout<<tree->depth_first_search_sum_of_nodes()<<'\n';
     //std::cout<<tree->breath_first_search_sum_of_nodes()<<'\n';
     //std::cout<<tree->breath_first_search_min_node()<<'\n';
-    std::cout<<tree->depth_first_search_min_node()<<'\n';
+    //std::cout<<tree->depth_first_search_min_node()<<'\n';
+    //std::cout<<tree->depth_first_search_max_sum_from_root_to_leaf();
+    tree->breadth_first_search_iterative();
+    tree->level_order_traversal();
     return 0;
 }

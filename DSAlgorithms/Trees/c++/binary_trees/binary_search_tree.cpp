@@ -175,6 +175,35 @@ void binary_search_tree<data_type>::bfs_iterative(binary_search_tree_node<data_t
     }
 }
 template <class data_type>
+void binary_search_tree<data_type>::level_order_traversal()
+{
+    level_order(root);
+}
+template <class data_type>
+void binary_search_tree<data_type>::level_order(binary_search_tree_node<data_type> *p)
+{
+    if(p == nullptr)
+        return;
+    std::cout<<p->info;
+    std::queue<binary_search_tree_node<data_type>> q;
+    q.push(*p);
+    while(!q.empty())
+    {
+        binary_search_tree_node<data_type> current = q.front();
+        q.pop();
+        if(current.left_link != nullptr)
+        {
+            std::cout<<current.left_link->info;
+            q.push(*current.left_link);
+        }
+        if(current.right_link != nullptr)
+        {
+            std::cout<<current.right_link->info;
+            q.push(*current.right_link);
+        }
+    }
+}
+template <class data_type>
 bool binary_search_tree<data_type>::breadth_first_search_item_search(int target)
 {
     bfs_item_search(root, target);
@@ -288,7 +317,23 @@ int binary_search_tree<data_type>::dfs_min_node(binary_search_tree_node<data_typ
         return 99999;
     int leftMin = dfs_min_node(p->left_link);
     int rightMin = dfs_min_node(p->right_link);
-    return std::min({p->info, leftMin, rightMin});
+    return std::min(p->info, std::min(leftMin, rightMin));
+}
+template <class data_type>
+int binary_search_tree<data_type>::depth_first_search_max_sum_from_root_to_leaf()
+{
+    dfs_max_sum_from_root_to_leaf(root);
+}
+template <class data_type>
+int binary_search_tree<data_type>::dfs_max_sum_from_root_to_leaf(binary_search_tree_node<data_type> *p)
+{
+    if(p == nullptr)
+        return -9999;
+    if(p->left_link == nullptr && p->right_link == nullptr)
+        return p->info;
+    int max_child_sum = std::max(dfs_max_sum_from_root_to_leaf(p->left_link), dfs_max_sum_from_root_to_leaf(p->right_link));
+    return p->info + max_child_sum;
+
 }
 template <class data_type>
 void binary_search_tree<data_type>::insert(const data_type& item)
