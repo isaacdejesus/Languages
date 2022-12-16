@@ -114,6 +114,183 @@ void binary_search_tree<data_type>::iterative_inorder(binary_search_tree_node<da
     }
 }
 template <class data_type>
+void binary_search_tree<data_type>::depth_first_traversal_iterative()
+{
+    dfs_iterative(root);
+}
+template <class data_type>
+void binary_search_tree<data_type>::dfs_iterative(binary_search_tree_node<data_type> *p)
+{
+    if(p == nullptr)
+        return;
+    std::stack<binary_search_tree_node<data_type>> a_stack;
+    a_stack.push(*p);
+    while(!a_stack.empty())
+    {
+        binary_search_tree_node<data_type> current = a_stack.top();
+        a_stack.pop();
+        std::cout<<current.info;
+        if(current.right_link != nullptr)
+            a_stack.push(*current.right_link);
+        if(current.left_link != nullptr)
+            a_stack.push(*current.left_link);
+        
+    }
+}
+template <class data_type>
+void binary_search_tree<data_type>::depth_first_traversal_recursive()
+{
+    dfs_recursive(root);
+}
+template <class data_type>
+void binary_search_tree<data_type>::dfs_recursive(binary_search_tree_node<data_type> *p)
+{
+    if(p == nullptr)
+        return;
+    std::cout<<p->info;
+    dfs_recursive(p->left_link);
+    dfs_recursive(p->right_link);
+}
+template <class data_type>
+void binary_search_tree<data_type>::breadth_first_search_iterative()
+{
+    bfs_iterative(root);
+}
+template <class data_type>
+void binary_search_tree<data_type>::bfs_iterative(binary_search_tree_node<data_type> *p)
+{
+    if(p == nullptr)
+        return;
+    std::queue<binary_search_tree_node<data_type>> q;
+    q.push(*p);
+    while(!q.empty())
+    {
+        binary_search_tree_node<data_type> current = q.front();
+        q.pop();
+        std::cout<<current.info;
+        if(current.left_link != nullptr)
+            q.push(*current.left_link);
+        if(current.right_link != nullptr)
+            q.push(*current.right_link);
+    }
+}
+template <class data_type>
+bool binary_search_tree<data_type>::breadth_first_search_item_search(int target)
+{
+    bfs_item_search(root, target);
+}
+template <class data_type>
+bool binary_search_tree<data_type>::bfs_item_search(binary_search_tree_node<data_type> *p, int target)
+{
+    if(p == nullptr)
+        return false;
+    std::queue<binary_search_tree_node<data_type>> q;
+    q.push(*p);
+    while(!q.empty())
+    {
+        binary_search_tree_node<data_type> current = q.front();
+        q.pop();
+        if(current.info == target)
+            return true;
+        if(current.left_link != nullptr)
+            q.push(*current.left_link);
+        if(current.right_link != nullptr)
+            q.push(*current.right_link);
+    }
+    return false;
+}
+template <class data_type>
+bool binary_search_tree<data_type>::depth_first_search_item_search(int target)
+{
+    dfs_item_search(root, target);
+}
+template <class data_type>
+bool binary_search_tree<data_type>::dfs_item_search(binary_search_tree_node<data_type> *p, int target)
+{
+    if(p == nullptr)
+        return false;
+    if(p->info == target)
+        return true;
+    return dfs_item_search(p->left_link, target) || dfs_item_search(p->right_link, target);
+}
+template <class data_type>
+int binary_search_tree<data_type>::depth_first_search_sum_of_nodes()
+{
+    dfs_sum_nodes(root);
+}
+template <class data_type>
+int binary_search_tree<data_type>::dfs_sum_nodes(binary_search_tree_node<data_type> *p)
+{
+    if(p == nullptr)
+        return 0;
+    return p->info + dfs_sum_nodes(p->left_link) + dfs_sum_nodes(p->right_link);
+}
+template <class data_type>
+int binary_search_tree<data_type>::breath_first_search_sum_of_nodes()
+{
+    bfs_sum_nodes(root);
+}
+template <class data_type>
+int binary_search_tree<data_type>::bfs_sum_nodes(binary_search_tree_node<data_type> *p)
+{
+    if(p == nullptr)
+        return 0;
+    int sum = 0;
+    std::queue<binary_search_tree_node<data_type>> q;
+    q.push(*p);
+    while(!q.empty())
+    {
+        binary_search_tree_node<data_type> current = q.front();
+        q.pop();
+        sum += current.info;
+        if(current.left_link != nullptr)
+            q.push(*current.left_link);
+        if(current.right_link != nullptr)
+            q.push(*current.right_link);
+    }
+    return sum;
+}
+template <class data_type>
+int binary_search_tree<data_type>::breath_first_search_min_node()
+{
+    bfs_min_node(root);
+}
+template <class data_type>
+int binary_search_tree<data_type>::bfs_min_node(binary_search_tree_node<data_type> *p)
+{
+    if(p == nullptr)
+        return 0;
+    int long smallest = 9999999;
+    std::queue<binary_search_tree_node<data_type>> q;
+    q.push(*p);
+    while(!q.empty())
+    {
+        binary_search_tree_node<data_type> current = q.front();
+        q.pop();
+        if(current.info < smallest)
+            smallest = current.info;
+        if(current.left_link != nullptr)
+            q.push(*current.left_link);
+        if(current.right_link != nullptr)
+            q.push(*current.right_link);
+    }
+    return smallest;
+}
+template <class data_type>
+int binary_search_tree<data_type>::depth_first_search_min_node()
+{
+    dfs_min_node(root);
+}
+template <class data_type>
+int binary_search_tree<data_type>::dfs_min_node(binary_search_tree_node<data_type> *p)
+{
+    if(p == nullptr)
+        return 99999;
+    int leftMin = dfs_min_node(p->left_link);
+    int rightMin = dfs_min_node(p->right_link);
+    return std::min({p->info, leftMin, rightMin});
+}
+template <class data_type>
 void binary_search_tree<data_type>::insert(const data_type& item)
 {
     binary_search_tree_node<data_type> *current;

@@ -24,6 +24,15 @@ class binary_search_tree
         //void iterative_postorder_traversal() const;
         void iterative_inorder_traversal() const;
         //void level_order_traversal() ;
+        void depth_first_traversal_iterative();
+        void depth_first_traversal_recursive();
+        void breadth_first_search_iterative();
+        bool breadth_first_search_item_search(int target);
+        bool depth_first_search_item_search(int target);
+        int depth_first_search_sum_of_nodes();
+        int breath_first_search_sum_of_nodes();
+        int breath_first_search_min_node();
+        int depth_first_search_min_node();
         void insert(const data_type& item);  //bst function
         bool search(const data_type& item) const;  //bst function
         void delete_node(const data_type& item);   //bst function
@@ -47,12 +56,20 @@ class binary_search_tree
         //void iterative_postorder(binary_search_tree_node<data_type> *p) const;
         void iterative_inorder(binary_search_tree_node<data_type> *p) const;
         //void level_order(binary_search_tree_node<data_type> *p) ;
+        void dfs_iterative(binary_search_tree_node<data_type> *p);
+        void dfs_recursive(binary_search_tree_node<data_type> *p);
+        void bfs_iterative(binary_search_tree_node<data_type> *p);
+        bool bfs_item_search(binary_search_tree_node<data_type> *p, int target);
+        bool dfs_item_search(binary_search_tree_node<data_type> *p, int target);
+        int dfs_sum_nodes(binary_search_tree_node<data_type> *p);
+        int bfs_sum_nodes(binary_search_tree_node<data_type> *p);
+        int bfs_min_node(binary_search_tree_node<data_type> *p);
+        int dfs_min_node(binary_search_tree_node<data_type> *p);
         void delete_from_tree(binary_search_tree_node<data_type>* &p);
         int height(binary_search_tree_node<data_type> *p) ;
         int max(int x, int y);
         int node_count(binary_search_tree_node<data_type> *p) const;
         int leaves_count(binary_search_tree_node<data_type> *p) const;
-
 };
 
 #endif
