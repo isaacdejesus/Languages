@@ -106,7 +106,7 @@ export class linked_list{
         if(head === null)
             return false;
 
-        if(head .val === target)
+        if(head.val === target)
             return true;
         return this.is_item_in_list_recursive(head.next, target);
     }
