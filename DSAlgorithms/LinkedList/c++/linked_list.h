@@ -15,14 +15,19 @@ class linked_list
         linked_list();
         bool isEmpty() const;
         void destroyList();
-        //bool search(const data_type& item);
+        node<data_type>* search(const data_type& item);
         void insert_first(const data_type& item);
         int get_length();
-        //void insert_last(const data_type& item);
+        void insert_last(const data_type& item);
+        void insert_at_index(const data_type& item, int index);
         void display();
+        node<data_type>* get_node(int index);
         //void delete_item(const data_type& item);
+        node<data_type>* delete_head();
+        node<data_type>* delete_tail();
+        node<data_type>* delete_at_index(int index);
     protected:
-        int count;
+        int size;
         node<data_type> *head;
         node<data_type> *tail;
 };
