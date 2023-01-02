@@ -20,12 +20,14 @@ class linked_list
         int get_length();
         void insert_last(const data_type& item);
         void insert_at_index(const data_type& item, int index);
+        node<data_type>* insert_rec(int index, const data_type& item, node<data_type>* next);
         void display();
         node<data_type>* get_node(int index);
         //void delete_item(const data_type& item);
         node<data_type>* delete_head();
         node<data_type>* delete_tail();
         node<data_type>* delete_at_index(int index);
+        void remove_duplicates();
     protected:
         int size;
         node<data_type> *head;

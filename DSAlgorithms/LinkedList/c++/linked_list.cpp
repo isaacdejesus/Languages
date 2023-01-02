@@ -101,6 +101,20 @@ void linked_list<data_type>::insert_at_index(const data_type& item, int index)
     size++;
 }
 template <class data_type>
+node<data_type>* linked_list<data_type>::insert_rec(int index, const data_type& item, node<data_type>* next)
+{
+    if(index == 0) //base case. Reached insertion loc. Return newnode
+    {
+        node<data_type> *temp = new node<data_type>;
+        temp->link = nullptr;
+        temp->info = item;
+        size++;
+        return temp;
+    }
+        next->link = insert_rec(index--, item, next->link);
+        return next;
+}
+template <class data_type>
 node<data_type>* linked_list<data_type>::delete_head()
 {
     node<data_type> *temp;
@@ -140,6 +154,23 @@ node<data_type>* linked_list<data_type>::delete_at_index(int index)
     node<data_type>* temp = prev->link;
     prev->link = prev->link->link;
     return temp;
+}
+template <class data_type>
+void linked_list<data_type>::remove_duplicates()
+{
+    node<data_type> *temp = head;
+    while(temp->link != nullptr)
+    {
+        if(temp->info == temp->link->info)
+        {
+            temp->link = temp->link->link;
+            size--;
+        }
+        else 
+            temp = temp->link;
+    }
+    tail = temp;
+    tail->link = nullptr;
 }
 template <class data_type>
 node<data_type>* linked_list<data_type>::search(const data_type& item)
