@@ -15,7 +15,9 @@ int infinite_search_helper(std::vector<int>, int);
 int mountain_search_peak(std::vector<int>);
 int mountain_search(std::vector<int>, int);
 int find_pivot(std::vector<int>);
+int find_pivot_diplicates(std::vector<int>);
 int rotated_search(std::vector<int>, int);
+int count_rotations(std::vector<int>);
 int main()
 {
     std::vector<int> v = {2, 3, 5, 7, 9, 10};
@@ -262,6 +264,34 @@ int find_pivot(std::vector<int> vec)
     }
     return -1;
 }
+//used to search rotated arr with duplicates
+int find_pivot_diplicates(std::vector<int> vec)
+{
+    int start = 0;
+    int end = vec.size() - 1;
+    while(start <= end )
+    {
+        int mid = start  + (end - start) / 2;
+        if( mid < end && vec[mid] > vec[mid + 1])
+            return mid;
+        if(mid > start && vec[mid] < vec[mid - 1])
+            return mid - 1;
+        if(vec[mid] == vec[start] && vec[mid] == vec[end])
+        {
+            if(vec[start] > vec[start + 1])
+                return start;
+            start++;
+            if(vec[end] < vec[end - 1])
+                return end - 1;
+            end--;
+        }
+        else if(vec[start] < vec[mid] || (vec[start] == vec[mid] && vec[mid] > vec[end]))
+            start = mid + 1;
+        else
+            end = mid - 1;
+    }
+    return -1;
+}
 int rotated_search(std::vector<int> vec, int target)
 {
     int pivot = find_pivot(vec);
@@ -272,4 +302,9 @@ int rotated_search(std::vector<int> vec, int target)
     if(target >= vec[0])
         return b_search(vec, target, 0, pivot - 1);
     return b_search(vec, target, pivot + 1, vec.size() - 1);
+}
+int count_rotations(std::vector<int> vec)
+{
+    int pivot = find_pivot(vec);
+    return pivot + 1;
 }
