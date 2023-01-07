@@ -18,6 +18,7 @@ int find_pivot(std::vector<int>);
 int find_pivot_diplicates(std::vector<int>);
 int rotated_search(std::vector<int>, int);
 int count_rotations(std::vector<int>);
+int split_arr(std::vector<int>, int);
 int main()
 {
     std::vector<int> v = {2, 3, 5, 7, 9, 10};
@@ -307,4 +308,34 @@ int count_rotations(std::vector<int> vec)
 {
     int pivot = find_pivot(vec);
     return pivot + 1;
+}
+int split_arr(std::vector<int>vec, int m)
+{
+    int start = 0;
+    int end = 0;
+    for(int i = 0; i < vec.size() - 1; i++)
+    {
+        start = std::max(start, vec[i]);
+        end += vec[i];
+    }
+    while (start < end)
+    {
+        int mid = start + (end - start)  / 2;
+        int sum = 0;
+        int pieces = 1;
+        for(auto element: vec)
+        {
+            if(sum + element > mid)
+            {
+                sum = element;
+                pieces++;
+            }
+            else
+                sum += element;
+        }
+        if(pieces > m)
+            start = mid + 1;
+        else end = mid;
+    }
+    return end;
 }
