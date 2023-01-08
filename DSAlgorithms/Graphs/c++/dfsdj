@@ -1,0 +1,25 @@
+#include <iostream>
+#include <queue>
+#include <vector>
+
+void bfs(std::vector<std::vector<int>>, int);
+int main()
+{
+    std::vector<std::vector<int>> matrix 
+        {{0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 1, 1, 0, 0, 0},
+        {0, 1, 0, 0, 1, 0, 0},
+        {0, 1, 0, 0, 1, 0, 0},
+        {0, 0, 1, 1, 0, 1, 1},
+        {0, 0, 0, 0, 1, 0, 0},
+        {0, 0, 0, 0, 1, 0, 0}};
+    return 0;
+}
+
+
+void bfs(std::vector<std::vector<int>> matrix, int root)
+{
+    std::queue<int> q;
+    std::vector<int> visited (matrix.size(), 0);
+    std::cout<<
+}
