@@ -13,30 +13,32 @@ int main()
         {0, 0, 1, 1, 0, 1, 1},
         {0, 0, 0, 0, 1, 0, 0},
         {0, 0, 0, 0, 1, 0, 0}};
-    bfs(matrix, 1);
+    bfs(matrix, 4);
     return 0;
 }
 
 
 void bfs(std::vector<std::vector<int>> matrix, int root)
 {
-    int i = root;
+    int current_node = root;
     std::queue<int> q;
     std::vector<int> visited (matrix.size(), 0);
-    std::cout<<i<<' ';
-    visited[i] = 1;
-    q.push(i);
+//    std::cout<<current_node<<' ';
+ //   visited[current_node] = 1;
+    q.push(current_node);
     while(!q.empty())
     {
-        i = q.front();
+        current_node = q.front();
         q.pop();
-        for(int j = 1; j < matrix[0].size(); j++)
+        std::cout<<current_node<<' ';
+        visited[current_node] = 1;
+        for(int neighbor = 1; neighbor < matrix[0].size(); neighbor++)
         {
-            if(matrix[i][j] == 1 && visited[j] == 0)
+            if(matrix[current_node][neighbor] == 1 && visited[neighbor] == 0)
             {
-                std::cout<<j<<' ';
-                visited[j] = 1;
-                q.push(j);
+                //std::cout<<neighbor<<' ';
+                visited[neighbor] = 1;
+                q.push(neighbor);
             }
         }
     }
