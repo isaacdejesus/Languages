@@ -23,8 +23,6 @@ void bfs(std::vector<std::vector<int>> matrix, int root)
     int current_node = root;
     std::queue<int> q;
     std::vector<int> visited (matrix.size(), 0);
-//    std::cout<<current_node<<' ';
- //   visited[current_node] = 1;
     q.push(current_node);
     while(!q.empty())
     {
@@ -36,7 +34,6 @@ void bfs(std::vector<std::vector<int>> matrix, int root)
         {
             if(matrix[current_node][neighbor] == 1 && visited[neighbor] == 0)
             {
-                //std::cout<<neighbor<<' ';
                 visited[neighbor] = 1;
                 q.push(neighbor);
             }
