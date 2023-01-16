@@ -55,18 +55,18 @@ int queens(std::vector<std::vector<bool>> board , int row)
 bool isSafe(std::vector<std::vector<bool>> board, int row, int col)
 {
     //check vertical row
-    for(int i = 0; i < row; i++)
-        if(board[i][col])
+    for(int r = 0; r < row; r++)
+        if(board[r][col])
             return false;
     //check left diagonal
-    int max_left = std::min(row, col);
-    for(int i = 1; i <= max_left; i++)
+    int left_diagonal = std::min(row, col);
+    for(int i = 1; i <= left_diagonal; i++)
         if(board[row - i][col - i])
             return false;
     //check right diagonal
     int s = board[0].size() - col - 1;
-    int max_right = std::min(row, s);
-    for(int i = 1; i <= max_right; i++)
+    int right_diagonal = std::min(row, s);
+    for(int i = 1; i <= right_diagonal; i++)
         if(board[row - i][col+ i])
             return false;
     return true;
