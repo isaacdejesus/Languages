@@ -31,12 +31,11 @@ bool isSafe(std::vector<std::vector<int>>& board, int row, int col, int num)
 {
     //check if number already exists in row
     for(int i = 0; i < board.size(); i++)
-        if(board[row][col] == num)
+        if(board[row][i] == num)
             return false;
     //check if number already exists in col
     for(int r = 0; r < board.size(); r++)
     {
-        std::cout<<"Checking col: "<<col<<" on row: "<<row<<'\n';
         if(board[r][col] == num)
             return false;
     }
