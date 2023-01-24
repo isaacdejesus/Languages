@@ -2,11 +2,12 @@
 #include<unordered_map>
 
 int gridTraveler(int, int);
-int gridTravelerMemoized(int, int);
+int gridTravelerMemoized(int, int, std::unordered_map<std::string, int>);
 int main()
 {
     std::cout<<gridTraveler(2,3)<<'\n';
-    std::cout<<gridTravelerMemoized(2,3)<<'\n';
+    std::unordered_map<std::string, int> cache;
+    std::cout<<gridTravelerMemoized(2,3, cache)<<'\n';
     return 0;
 }
 int gridTraveler(int m , int n)
@@ -19,9 +20,8 @@ int gridTraveler(int m , int n)
 }
 
 
-int gridTravelerMemoized(int m , int n)
+int gridTravelerMemoized(int m , int n, std::unordered_map<std::string, int> cache)
 {
-    std::unordered_map<std::string, int> cache;
     std::string key = std::to_string(m) + ',' + std::to_string(n);
     if(cache[key])
         return cache[key];
@@ -29,6 +29,6 @@ int gridTravelerMemoized(int m , int n)
         return 1;
     if(m == 0 || n == 0)
         return 0;
-    cache[key] = gridTravelerMemoized(m - 1, n) + gridTravelerMemoized(m, n - 1);
+    cache[key] = gridTravelerMemoized(m - 1, n, cache) + gridTravelerMemoized(m, n - 1, cache);
     return cache[key];
 }
