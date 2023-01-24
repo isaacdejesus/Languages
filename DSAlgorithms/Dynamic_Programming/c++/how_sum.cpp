@@ -57,5 +57,4 @@ std::vector<int> how_sum_memoized(int target_sum, std::vector<int> numbers, std:
     }
     cache[target_sum] = {-1};
     return {-1};
-
 }
