@@ -7,7 +7,8 @@ std::vector<int> best_sum(int , std::vector<int>);
 int main()
 {
     std::vector<int> v1 = {3, 5, 2};
-    std::vector<int> result = best_sum_memoized(8, v1);
+    std::unordered_map<int, std::vector<int>> map;
+    std::vector<int> result = best_sum_memoized(8, v1, map);
     for(auto item : result)
         std::cout<<item<<' ';
     std::cout<<'\n';
