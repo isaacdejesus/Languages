@@ -1,4 +1,5 @@
- struct ListNode {
+//similar to #25 leetcode. Except alternade reversing depending on k
+struct ListNode {
      int val;
      ListNode *next;
      ListNode() : val(0), next(nullptr) {}
@@ -7,12 +8,12 @@
  };
 class Solution {
 public:
-    ListNode* reverseKGroup(ListNode* head, int k) {
+    ListNode* reverseKAlternateGroup(ListNode* head, int k) {
        if(k <= 1 || head == nullptr) 
             return head;
        ListNode* current = head;
        ListNode* prev = nullptr;
-       while(true)
+       while(current!= nullptr)
        {
         ListNode* last = prev;
         ListNode* new_end = current;
@@ -46,9 +47,12 @@ public:
             head = prev;
         
         new_end->next = current;
-        if(current == nullptr)
-            break; 
-       prev = new_end;
+        //skip k nodes after reversing k nodes
+        for(int i = 0; current != nullptr && i < k; i++)
+        {
+            prev = current;
+            current = current->next;
+        }
        }
         return head;
     }

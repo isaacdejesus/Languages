@@ -38,7 +38,5 @@ public:
         
         new_end->next = current;
         return head;
-
-        
     }
 };
