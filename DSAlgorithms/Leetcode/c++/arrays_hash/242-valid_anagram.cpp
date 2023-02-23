@@ -3,6 +3,7 @@
 
 bool is_anagram(std::string, std::string);
 bool is_anagram2(std::string s, std::string t);
+bool is_anagram3(std::string s, std::string t);
 int main()
 {
     std::cout<<isAnagram("rat", "car")<<'\n';
@@ -41,3 +42,9 @@ bool is_anagram2(string s, string t) {
         
     return true;
     }
+bool is_anagram3(std::string s, std::string t)
+{
+    std::sort(s.begin(), s.end());
+    std::sort(t.begin(), t.end());
+    return s == t;
+}
