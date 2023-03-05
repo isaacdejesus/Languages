@@ -36,10 +36,9 @@ bool is_anagram2(string s, string t) {
         s_hash[s[i]]++;
     for(int i = 0; i < t.size(); i++)
         t_hash[t[i]]++;
-    for(int i = 0; i < s_hash.size(); i++)
-        if(s_hash[i] != t_hash[i])
+    for(const auto &[key, value]: s_hash)
+        if(value != t_hash[key])
             return false;
-        
     return true;
     }
 bool is_anagram3(std::string s, std::string t)
