@@ -5,8 +5,8 @@ Tables are composed of cols/fields/attributes
 Each col has a unique name and datatype
 Set of cols make up a row/record/tuple
 Each row is uniquely identified by the primary key
-Primary key can be composed of combination of tables
-Foreign key primary key of another table used to relate tables together
+Primary key can be composed of combination of attributes
+Foreign key, is the primary key of another table used to relate tables together
 
 Integrity constraints: There are 3 main integrity constraints
 Key, domain and referantial intergrity constraints
