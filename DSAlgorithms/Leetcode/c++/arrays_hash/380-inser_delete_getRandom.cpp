@@ -37,5 +37,6 @@ public:
     
     int getRandom() {
             return vec[std::rand() % vec.size()];
+
     }
 };
