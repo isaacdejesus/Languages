@@ -20,14 +20,14 @@ linked_list<data_type>::linked_list()
     tail = nullptr;
     size = 0;
 }
-/*
 template <class data_type>
 void linked_list<data_type>::insert_first(const data_type& item)
 {
-    node<data_type> *current = head;
+    //node<data_type> *current = head;
     node<data_type> *new_node = new node<data_type>;
     new_node->info = item;
-    new_node->link = nullptr;
+    new_node->next = nullptr;
+    new_node->prev = nullptr;
     //list is empty. both head and tail point to new_node
     if(isEmpty())
     {
@@ -37,12 +37,12 @@ void linked_list<data_type>::insert_first(const data_type& item)
     }
     else //new_node points to head and head now points to new_link
     {
-       new_node->link = current;
+       new_node->next = head;
+       head->prev = new_node;
        head = new_node;
        size++;
     }
 }
-*/
 template <class data_type>
 void linked_list<data_type>::insert_last(const data_type& item)
 {
@@ -93,22 +93,37 @@ template <class data_type>
 void linked_list<data_type>::delete_node( node<data_type>* item)
 {
     //list is empty
-    if(item == nullptr)
+    if(head == nullptr && tail == nullptr)
         return;
     //last node in list
-    if(item->next == nullptr)
+    if(item->next == nullptr && item->prev == nullptr)
     {
         head = nullptr;
         tail = nullptr;
+        delete item;
     }
-    //first node
-    if(item->next != nullptr && item->prev == nullptr)
+    //node it at head
+    else if(item->next != nullptr && item->prev == nullptr)
     {
-        std::cout<<"deleting head"<<'\n';
         item->next->prev = nullptr;
         head = item->next;
         delete item;
     }
+    //node is at end
+    else if(item->next == nullptr && item->prev != nullptr)
+    {
+        item->prev->next = nullptr;
+        tail = item->prev;
+        delete item;
+    }
+    //node is between 
+    else if(item->next != nullptr && item->prev != nullptr)
+    {
+        item->prev->next = item->next;
+        item->next->prev = item->prev;
+        delete item;
+    }
+    size--;
 }
 /*
 template <class data_type>

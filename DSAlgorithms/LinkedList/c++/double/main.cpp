@@ -7,7 +7,14 @@ int main()
     list->insert_last(0);
     list->insert_last(2);
     list->insert_last(4);
+    list->insert_last(6);
+    list->insert_last(8);
+    list->insert_last(10);
     list->delete_node(list->search(0));
+    list->delete_node(list->search(4));
+    list->delete_node(list->search(10));
+    list->insert_first(0);
+    list->insert_first(4);
     //list->insert_last(6);
     //list->insert_last(8);
     //list->insert_last(10);
