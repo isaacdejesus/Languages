@@ -19,6 +19,6 @@ int helper(Node node, int sum, List<Integer> path)
     }
     count += helper(node.left, sum, path) + helper(node.right, sum, path);
     //backtrack
-    path.remove(path.size(0 -1));
+    path.remove(path.size() - 1);
     return count;
 }
