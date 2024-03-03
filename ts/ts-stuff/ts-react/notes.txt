@@ -1,0 +1,3 @@
+Create react app with ts 
+--------------------------------
+npx create-react-app name --template typescript

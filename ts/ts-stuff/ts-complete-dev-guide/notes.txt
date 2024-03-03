@@ -1,0 +1,113 @@
+Installing ts and ts-node
+----------------------------------------------
+npm install -g typescript ts-node
+
+=============================================
+tsc is the ts compiter
+tsc -- init  -> creates config.
+tsc -> compiles all ts files in the dir
+tsc file.ts  -> compiles only the current file and returns .js file
+ts-node file.ts compiles  and runs current file
+
+----------------------------------------------
+Setting source code folder and outdir
+---------------------------------------------
+Suppose we have an app folder
+run tsc --init to create ts config
+
+then create two folders: 
+src to store source code
+build to store compiled code
+
+then open the tsconfig file
+uncomment:
+rootDir: "./src"
+outDir: "./build"
+
+Now we can just run tsc
+Will read code from src folder and place compiled code in build folder
+
+tsc -w 
+will automatically recompile whenever any changes are made to files inside src folder
+
+---------------------------------------------
+automatizing ts compilation and running files
+------------------------------------------
+npm init -y
+npm i nodemon concurrently
+
+open package.json and add the following to scripts:
+  "scripts": {
+      "start:build": "tsc -w",
+      "start:run": "nodemon build/index.js",
+      "start": "concurrently npm:start:*"
+  },
+
+then run with npm start
+It will automatically compile and run code whenever changes are made
+-----------------------------------------
+Union operations
+-----------------------------------------
+(Number | String) => argument type can be a number or a string.
+However, we only have access to methods that both types have in common
+for example, we can do number[0] but we can't do string[0] since strings are not mutable
+as a result we will not have access to value[0] method within the union since the method is
+not avaiable to strings and would lead to errors
+
+In order to access all methods of a given type within an union 
+use type guards like so:
+if(typeof value === 'number'){
+    here we can access all methods belonging to number
+    not restricted to just methods in common between number and string
+}
+if(typeof value === 'string'){
+    same as above
+}
+
+see index.ts of sort program for type guard example
+
+use typeof to restore to primitive value:
+typeof value === 'string'
+typeof value ==='number'
+typeof value ==='boolean'
+
+for classes or other objects created with constructor use:
+value instanceof Array
+value instanceof Date
+value instanceof Person
+
+Above typeguards allows us to restore access to a type within an union
+Union operations lock methods to those shared between types.
+If types don't share any methods in common then no methods will be available
+unless type is narrowed down with typeguard, then full access to a given type's
+method will be obtained
+
+------------------------------------------
+set up ts project
+------------------------------------------
+mkdir app
+cd app
+npm init -y
+tsc --init
+npm i nodemon concurrently
+mkdir src
+mkdir build
+inside src create index.ts
+edit tsconfig:
+uncomment-> 
+"rootDir": "./src"
+"outDir": "./build"
+edit package.json:
+add scripts:
+
+  "scripts": {
+      "start:build": "tsc -w",
+      "start:run": "nodemon build/index.js",
+      "start": "concurrently npm:start:*"
+  },
+-------------------------------------------
+Type def required whenever ts complains about not finding module
+type def files are often installed:
+npm i @types/modulename
+for modules of the node standard lib we use:
+npm i @types/node
