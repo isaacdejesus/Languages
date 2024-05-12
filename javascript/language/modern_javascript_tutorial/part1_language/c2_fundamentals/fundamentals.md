@@ -115,3 +115,165 @@ typeof returns string with type of operand
 typeof 0;    //"number"
 typeof true; //"boolean"
 ```
+
+# Interaction: Alert, prompt, confirm
+### Alert
+Alert shows a message and waits for user to click 'ok'. 
+```javascript
+alert("hello");
+```
+### Prompt
+Promt accepts 2 args
+```javascript
+result = prompt(title, [default])
+```
+Shows a window with text msg, an input field and the buttons 'ok' and 'cancel'.
+- title is text displayed
+- default is optional second parameter, the initial value of input field
+- The [] around default means parameter is optional, not required.
+- If user clicks 'ok' input value is returned, else null is returned if 'cancel' was clicked
+```javascript
+let age = prompt("How old are you?", 100);
+alert(`Your are ${age} years old`);  //will return input or 100 if user hit cancel
+```
+- It is recommended to always supply second arg bc internet explorer will insert text "undefined" into prompt
+```javascript
+let test = prompt("test", '');
+```
+### Confirm
+```javascript
+result = confirm(question);
+```
+- confirm shows window with question and 'ok' and 'cancel' buttoms
+- 'ok' returns true
+- 'cancel' returns false
+
+# Type conversions
+### String conversion
+`String(value)`: Converts value to a string
+```javascript
+let value = true;
+console.log(typeof value);  //boolean
+value = String(value);
+console.log(typeof value);  //string
+```
+### Numeric conversion
+`Number(value)`: Converts value to a number
+```
+let value = "123";
+console.log(typeof value);  //string
+value = Number(value);
+console.log(typeof value);  //number
+```
+- If string is not a valid number result is NaN
+```javascript
+let age = Number("siriggej");
+console.log(age);  //NaN
+```
+- Undefined becomes NaN
+- null becomes 0
+- true and false become 1 and 0
+- string becomes NaN
+
+### Boolean conversion
+`Boolean(value)`: Converts value to boolean
+- Values that are empty like 0, "", null, undefined and NaN become false
+- Other values become true
+```javascript
+Boolean(1); //true
+Boolean(0); //false
+Boolean("hello"); //true
+Boolean("");      //false
+```
+# Basic operators and math
+### Terms: unary, binary and operand
+- Operand: is what operators are applied to. For ex. 5 * 2. There are 2 operands. Left operand is 5 and right operand is 2.
+- Unary: Operator is unary, if it has a single operand. 
+    Ex. Unary negation: 
+    ```javascript
+    let x = 1;
+    x = -x;
+    ```
+- Binary: Operator is binary, if it has 2 operands. 
+    Ex. Substraction
+    ```javascript
+    let x = 1
+    let y = 3;
+    y - x; //2
+    ```
+- Following Math operations are supported:
+    - Addition: `+`
+    - Substraction: `-`
+    - Multiplication: `*`
+    - Division: `/`
+    - Remainder: `%`
+    - Exponentiation: `**`
+### Exponentiation **
+`a ** b` raises a to the power of b: `a^b`
+```javascript
+2 ** 2;// 2^2 = 4
+2 ** 3;// 2^3 = 8
+2 ** 4;// 2^4 = 16
+4 **(1/2); //2. Power of 1/2 is same as square root
+8 **(1/3); //2. Power of 1/3 is same as cubit root
+```
+### Remainder %
+`a % b` is remainder of integer division of a by b
+```javascript
+5 % 2; //1, the remainder of 5 divided by 2
+8 % 3; //2, the remainder of 8 divided by 3
+8 % 4; //0, the remainder of 8 divided by 4
+```
+### String concatenation with binary + 
+- If binary `+` is applied to strings, it concatenates them
+```javascript
+let s = "my" + "string";// mystring
+```
+- If any of the operands is a string, the others are conversted to string!
+```javascript
+'1' + 2;// "12"
+2 + 2 + '1'; // "41" not "221"
+'1' + 2 + 2; // "122" not "14"
+```
+- Operators works one after other. See 2nd Ex. First sums 2 + 2 = 4, then sums 4 + '1' which converts 4 to '4'
+  resulting in '4' + '1' or '41'. 3rd Ex. since first operand is a string, '1', the remaining operands are converted 
+  to strings.
+- Binary `+` is the only operator that treats strings this way. Other operators convert operands to numbers
+```javascript
+6 - '2'; //4, converts '2' to a number
+'6' / '2'; //3, converts both operands to numbers
+```
+
+### Numeric conversion, unary +
+`+` exists in 2 forms: Binary form shown above and unary form
+- Unary `+`: is applied to a single value. It converts non-numbers into numbers
+```javascript
+//no effect on numbers
+let x = 1;
++x; //1
+//converts non numbers
++true; //1
++""; //0
+```
+- + when applied to a non-number has same effect as Number()
+```javascript
+let apples = "2";
+let oranges = "3";
+//Both strings must be converted to numbers prior ot binary sum
++apples + +oranges; //5
+//Above has same effect as
+Number(apples) + Number(oranges); //5
+```
+- Note: The `+` must be prefixed due to higher precedence
+### Operator precedence
+If expression has more than 1 operator, execution order is determined by their precedence.
+- Look up precedence table
+
+### Bitwise Operators
+- AND `&`
+- OR `|`
+- XOR `^`
+- NOT `~`
+- Left shift `<<`
+- Right shift `>>`
+- Zero-fill right shift `>>>`
