@@ -8,19 +8,24 @@ const longest_substring_k_distinct = (str: string, k: number) =>
         const right_char = str[window_end];
         if(!char_frequency.has(right_char))
             char_frequency.set(right_char, 0);
-        char_frequency.set(right_char, 1);
+        else
+        {
+            const current = char_frequency.get(right_char);
+            if(current !== undefined)
+                char_frequency.set(right_char, current + 1);
+        }
         while(char_frequency.size > k)
         {
             const left_char = str[window_start];
+            if(char_frequency.has(left_char) && char_frequency.get(left_char) === 0)
+                char_frequency.delete(left_char);
             if(char_frequency.has(left_char))
             {
                 const current = char_frequency.get(left_char);
                 if(current)
                     char_frequency.set(left_char, current - 1);
             }
-            if(char_frequency.has(left_char) && char_frequency.get(left_char) === 0)
-                char_frequency.delete(left_char);
-            window_start += 1; 
+            window_start ++; 
         }
         max_length = Math.max(max_length, window_end - window_start + 1);
     }
