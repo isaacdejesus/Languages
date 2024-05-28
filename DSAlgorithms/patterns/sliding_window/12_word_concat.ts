@@ -18,7 +18,7 @@ const word_concat = (str: string, words: string[]) => {
     for(let i = 0; i < (str.length - words_count * word_length) + 1; i++)
     {
         const words_seen = new Map<string, number>();
-        for(let j = 0; i < words_count; j++)
+        for(let j = 0; j < words_count; j++)
         {
             let next_word_index = i + j * word_length;
             let word = str.substring(next_word_index, next_word_index + word_length);
