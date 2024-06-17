@@ -17,5 +17,39 @@ Patterns are important to undertanding loops and being able to solve advanced pr
 * * * *
 * * * *
 ```
-
-
+```c++
+#include <bits/stdc++.h>
+void print_1(int n)
+{
+    for(int row = 0; row < n; row++)
+    {
+        for(int col = 0; col < n; col++)
+        {
+            std::cout<<"* ";
+        }
+        std::cout<<'\n';
+    }
+}
+```
+### Q: Code following pattern -
+```
+*
+* *
+* * *
+* * * *
+* * * * *
+```
+```c++
+#include <bits/stdc++.h>
+void pattern_2(int n)
+{
+    for(int row = 0; row < n; row++)
+    {
+        for(int col = 0; col <= row; col++)
+        {
+            std::cout<<"* ";
+        }
+        std::cout<<'\n';
+    }
+}
+```
