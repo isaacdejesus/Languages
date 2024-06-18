@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
-void pattern_2(int n)
+void pattern_5(int n)
 {
-    for(int row = 0; row < n; row++)
+    for(int row = 1; row <= n; row++)
     {
-        for(int col = 0; col <= row; col++)
+        for(int col = 0; col < n - row + 1; col++)
         {
             std::cout<<"* ";
         }
@@ -15,13 +15,14 @@ int main()
 {
     int n = 0;
     std::cin >> n;
-    pattern_2(n);
+    pattern_5(n);
 }
 
 /*
 prints
-*
-* * 
-* * *
+* * * * *
 * * * *
+* * *
+* *
+*
 */
