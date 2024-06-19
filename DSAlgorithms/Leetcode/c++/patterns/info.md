@@ -99,11 +99,11 @@ void pattern_3(int n)
 ``
 ### Q: Code following pattern -
 ```
-* * * * *
-* * * *
-* * *
-* *
-*
+x x x x x
+x x x x
+x x x
+x x
+x
 ```
 ```c++
 #include <bits/stdc++.h>
