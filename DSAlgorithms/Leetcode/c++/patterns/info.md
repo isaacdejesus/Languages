@@ -99,11 +99,11 @@ void pattern_3(int n)
 ``
 ### Q: Code following pattern -
 ```
-x x x x x
-x x x x
-x x x
-x x
-x
+    x x x x x
+    x x x x
+    x x x
+    x x
+    x
 ```
 ```c++
 #include <bits/stdc++.h>
@@ -121,11 +121,11 @@ void pattern_5(int n)
 ``
 ### Q: Code following pattern -
 ```
-1 2 3 4 5
-1 2 3 4
-1 2 3
-1 2
-1
+    1 2 3 4 5
+    1 2 3 4
+    1 2 3
+    1 2
+    1
 ```
 ```c++
 #include <bits/stdc++.h>
