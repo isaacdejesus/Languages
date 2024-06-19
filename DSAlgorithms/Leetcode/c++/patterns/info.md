@@ -143,20 +143,20 @@ void pattern_6(int n)
 ``
 ### Q: Code following pattern -
 ```
-    *
-   ***
-  *****
- *******
-*********
+    x
+   xxx
+  xxxxx
+ xxxxxxx
+xxxxxxxxx
 ```
 - Note for each row the pattern is `" "` followed by `*` followed by `" "`
 ```
                 [n - row - 1, 2 * 1 + 1, n - row - 1]
-0     *         [4 spaces, 1 star, 4 spaces]
-1    ***        [3 spaces, 3 stars, 3 spaces]
-2   *****       [2 spaces, 5 stars, 2 spaces]
-3  *******      [1 space, 7 stars, 1 space]
-4 *********     [0 space, 9 stars, 0 space]
+0     x         [4 spaces, 1 star, 4 spaces]
+1    xxx        [3 spaces, 3 stars, 3 spaces]
+2   xxxxx       [2 spaces, 5 stars, 2 spaces]
+3  xxxxxxx      [1 space, 7 stars, 1 space]
+4 xxxxxxxxx     [0 space, 9 stars, 0 space]
 ```
 - .:. Will need 3 inner loops: First loop to place spaces, Second loop to place stars and Third loop to add more spaces
 ```c++
@@ -180,19 +180,19 @@ void pattern_7(int n)
 ``
 ### Q: Code following pattern -
 ```
-*********
- *******
-  *****
-   ***
-    *
+xxxxxxxxx
+ xxxxxxx
+  xxxxx
+   xxx
+    x
 ```
 ```
                     [space == row, 2n - (2*row + 1), space == row]
-0 *********         [0 space, 9 stars, 0 space]
-1  *******          [1 space, 7 stars, 1 space]
-2   *****           [2 spaces, 5 stars, 2 spaces]
-3    ***            [3 spaces, 3 stars, 3 spaces]
-4     *             [4 spaces, 1 star, 4 spaces]
+0 xxxxxxxxx         [0 space, 9 stars, 0 space]
+1  xxxxxxx          [1 space, 7 stars, 1 space]
+2   xxxxx           [2 spaces, 5 stars, 2 spaces]
+3    xxx            [3 spaces, 3 stars, 3 spaces]
+4     x             [4 spaces, 1 star, 4 spaces]
 ```
 ```c++
 #include <bits/stdc++.h>
@@ -215,30 +215,30 @@ void pattern_8(int n)
 ``
 ### Q: Code following pattern -
 ```
-    *
-   ***
-  *****
- *******
-*********
-*********
- *******
-  *****
-   ***
-    *
+    x
+   xxx
+  xxxxx
+ xxxxxxx
+xxxxxxxxx
+xxxxxxxx
+ xxxxxxx
+  xxxxx
+   xxx
+    x
 ```
 ```
                     [n - row - 1, 2 * 1 + 1, n - row - 1]
-0     *             [4 spaces, 1 star, 4 spaces]
-1    ***            [3 spaces, 3 stars, 3 spaces]
-2   *****           [2 spaces, 5 stars, 2 spaces]
-3  *******          [1 space, 7 stars, 1 space]
-4 *********         [0 space, 9 stars, 0 space]
+0     x             [4 spaces, 1 star, 4 spaces]
+1    xxx            [3 spaces, 3 stars, 3 spaces]
+2   xxxxx           [2 spaces, 5 stars, 2 spaces]
+3  xxxxxxx          [1 space, 7 stars, 1 space]
+4 xxxxxxxxx         [0 space, 9 stars, 0 space]
                     [space == row, 2n - (2*row + 1), space == row]
-0 *********         [0 space, 9 stars, 0 space]
-1  *******          [1 space, 7 stars, 1 space]
-2   *****           [2 spaces, 5 stars, 2 spaces]
-3    ***            [3 spaces, 3 stars, 3 spaces]
-4     *             [4 spaces, 1 star, 4 spaces]
+0 xxxxxxxxx         [0 space, 9 stars, 0 space]
+1  xxxxxxx          [1 space, 7 stars, 1 space]
+2   xxxxx           [2 spaces, 5 stars, 2 spaces]
+3    xxx            [3 spaces, 3 stars, 3 spaces]
+4     x             [4 spaces, 1 star, 4 spaces]
 ```
 ```c++
 #include <bits/stdc++.h>
@@ -282,15 +282,15 @@ void pattern_8(int n)
 n = 5, results in 9 rows .:. need 9 rows or 2*n - 1 rows
 Up until 5, stars == row
 after 5, stars = (2n - row)
-1 *         [1 star]
-2 **        [2 stars]
-3 ***       [3 stars]
-4 ****      [4 stars]
-5 *****     [5 stars]
-6 ****      [4 stars]
-7 ***       [3 stars]
-8 **        [2 stars]
-9 *         [1 star]
+1 x         [1 star]
+2 xx        [2 stars]
+3 xxx       [3 stars]
+4 xxxx      [4 stars]
+5 xxxxx     [5 stars]
+6 xxxx      [4 stars]
+7 xxx       [3 stars]
+8 xx        [2 stars]
+9 x         [1 star]
 ```
 
 ```c++
