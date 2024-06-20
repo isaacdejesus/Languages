@@ -177,7 +177,7 @@ void pattern_7(int n)
         std::cout<<'\n';
     }
 }
-``
+```
 ### Q: Code following pattern -
 ```
     xxxxxxxxx
@@ -227,13 +227,13 @@ void pattern_8(int n)
         x
 ```
 ```
-                    [n - row - 1, 2 * 1 + 1, n - row - 1]
+                        [n - row - 1, 2 * 1 + 1, n - row - 1]   
     0     x             [4 spaces, 1 star, 4 spaces]
     1    xxx            [3 spaces, 3 stars, 3 spaces]
     2   xxxxx           [2 spaces, 5 stars, 2 spaces]
     3  xxxxxxx          [1 space, 7 stars, 1 space]
     4 xxxxxxxxx         [0 space, 9 stars, 0 space]
-                    [space == row, 2n - (2*row + 1), space == row]
+                        [space == row, 2n - (2*row + 1), space == row]
     0 xxxxxxxxx         [0 space, 9 stars, 0 space]
     1  xxxxxxx          [1 space, 7 stars, 1 space]
     2   xxxxx           [2 spaces, 5 stars, 2 spaces]
@@ -274,7 +274,7 @@ void pattern_8(int n)
         std::cout<<'\n';
     }
 }
-``
+```
 - Just call both previous pattern/functions
 
 ### Q: Code following pattern -
