@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@datastructures-js/deque": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.1"
+  }
+}
