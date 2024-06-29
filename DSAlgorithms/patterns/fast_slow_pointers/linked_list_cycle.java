@@ -1,0 +1,41 @@
+class list_node {
+    int value = 0;
+    list_node next;
+
+    list_node(int value)
+    {
+        this.value = value;
+    }
+}
+
+class linked_list_cycle {
+    public static boolean has_cycle(list_node head)
+    {
+        list_node slow = head;
+        list_node fast = head;
+        while(fast != null && fast.next != null)
+        {
+            fast = fast.next.next;
+            slow = slow.next;
+            if(slow == fast)
+                return true;
+        }
+        return false;
+    }
+     public static void main(String[] args)
+     {
+         list_node head = new list_node(1);
+         head.next = new list_node(2);
+         head.next.next = new list_node(3);
+         head.next.next.next = new list_node(4);
+         head.next.next.next.next = new list_node(5);
+         head.next.next.next.next.next = new list_node(6);
+         System.out.println("Linked list has cycle: " + linked_list_cycle.has_cycle(head));
+
+         head.next.next.next.next.next.next = head.next.next;
+         System.out.println("Linked list has cycle: " + linked_list_cycle.has_cycle(head));
+
+         head.next.next.next.next.next.next = head.next.next.next;
+         System.out.println("Linked list has cycle: " + linked_list_cycle.has_cycle(head));
+     }
+}
