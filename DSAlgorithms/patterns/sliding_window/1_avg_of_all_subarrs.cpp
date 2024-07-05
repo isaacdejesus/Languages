@@ -8,15 +8,15 @@ class avg_of_subarr_size_k
         {
             std::vector<double> result(arr.size() -k + 1) ;
             double window_sum = 0;
-            int window_start = 0;
-            for(int window_end = 0; window_end < arr.size() ; window_end++)
+            int l = 0;
+            for(int r = 0; r < arr.size() ; r++)
             {
-                window_sum += arr[window_end];
-                if(window_end >= k - 1)
+                window_sum += arr[r];
+                if(r >= k - 1)
                 {
-                    result[window_start] = window_sum / k;
-                    window_sum -= arr[window_start];
-                    window_start++;
+                    result[l] = window_sum / k;
+                    window_sum -= arr[l];
+                    l++;
                 }
             }
             return result;

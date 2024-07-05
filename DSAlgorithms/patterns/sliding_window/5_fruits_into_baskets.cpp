@@ -5,20 +5,20 @@ class fruits_into_baskets {
     public:
         static int find_length(const std::vector<char>& arr)
         {
-            int window_start = 0;
+            int l = 0;
             int max_length = 0;
             std::unordered_map<char, int> fruit_freq;
-            for(int window_end = 0; window_end < arr.size(); window_end++)
+            for(int r = 0; r < arr.size(); r++)
             {
-                fruit_freq[arr[window_end]]++;
+                fruit_freq[arr[r]]++;
                 while((int)fruit_freq.size() > 2)
                 {
-                    fruit_freq[arr[window_start]]--;
-                    if(fruit_freq[arr[window_start]] == 0)
-                        fruit_freq.erase(arr[window_start]);
-                    window_start++;
+                    fruit_freq[arr[l]]--;
+                    if(fruit_freq[arr[l]] == 0)
+                        fruit_freq.erase(arr[l]);
+                    l++;
                 }
-                max_length = std::max(max_length, window_end - window_start + 1);
+                max_length = std::max(max_length, r - l + 1);
             }
             return max_length;
         }

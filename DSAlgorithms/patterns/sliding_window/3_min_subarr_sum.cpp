@@ -7,15 +7,15 @@ class min_subarr_sum {
         {
             int window_sum = 0;
             int min_length = std::numeric_limits<int>::max();
-            int window_start = 0;
-            for(int window_end = 0; window_end < arr.size(); window_end++)
+            int l = 0;
+            for(int r = 0; r < arr.size(); r++)
             {
-                window_sum += arr[window_end];
+                window_sum += arr[r];
                 while(window_sum >= s)
                 {
-                    min_length = std::min(min_length, window_end - window_start + 1);
-                    window_sum -= arr[window_start];
-                    window_start++;
+                    min_length = std::min(min_length, r - l + 1);
+                    window_sum -= arr[l];
+                    l++;
                 }
             }
             return min_length == std::numeric_limits<int>::max() ? 0 : min_length;

@@ -7,15 +7,15 @@ class max_sum_subarr
         {
             int max_sum = 0;
             int window_sum = 0;
-            int window_start = 0;
-            for(int window_end = 0; window_end < arr.size() ; window_end ++)
+            int l = 0;
+            for(int r = 0; r < arr.size() ; r ++)
             {
-                window_sum += arr[window_end];
-                if(window_end >= k - 1)
+                window_sum += arr[r];
+                if(r >= k - 1)
                 {
                     max_sum = std::max(max_sum, window_sum);
-                    window_sum -= arr[window_start];
-                    window_start++;
+                    window_sum -= arr[l];
+                    l++;
                 }
             }
             return max_sum;
