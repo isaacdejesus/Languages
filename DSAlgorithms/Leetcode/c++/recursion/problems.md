@@ -225,3 +225,43 @@ bool f(std::string& str,int l)
     return f(str,  l + 1);
 }
 ```
+### Fibbonacci
+- Unlike previous problems fib makes multiple rec calls
+```
+0th fib number is 0
+1st fib number is 1
+2nd fib number is 1
+3rd fib number is sum of last 2
+0 1 1 2 3 5 8 13 21 34 ...
+```
+- Write a function that returns the nth fib number
+```c++
+#include<bits/stdc++.h>
+int f(int n)
+{
+    if(n <= 1)
+        return n;
+    //return f(n - 1) + f(n - 2);
+    //below does same as above
+    int last = f(n - 1);  //will run to completion
+    int second_last = f(n - 2);  //won't run until above rec call finishes and returns
+    return last + second_last;
+}
+```
+- Recall func will be read line by line .:. last = f(n -1) call will run to completion and rest of code
+  won't run until last = f(n - 1) returns
+- Since fib makes multiple recursion calls, result will be a branched recursion tree
+```
+                            f(4)        2 + 1 => 3
+                            /   \
+            1 + 1        f(3)    f(2)   1 + 0
+                         / \     /  \
+            1 + 0     f(2) f(1) f(1) f(0)
+                      /\
+                    f(1)f(0)
+f(1) and f(0) are base cases that return 1 and 0
+Call are exe in order called .:. left branch is exe first then right branch
+left: f(4) -> f(3) -> f(2) -> f(1) -> f(0) -> f(1)
+right: f(2) -> f(1) -> f(0)
+```
+- Note fib uses head recursion .:. result is calc at return time
