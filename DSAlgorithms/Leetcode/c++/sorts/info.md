@@ -159,5 +159,18 @@ j = i/3
 ugh and so on
 ```
 ```c++
-
+void insertion(std::vector<int>& arr)
+{
+    for(int i = 0; i < arr.size(); i++)
+    {
+        int j = i;
+        while(j > 0 && arr[j - 1] > arr[j])
+        {
+            int temp = arr[j - 1];
+            arr[j - 1] = arr[j];
+            arr[j] = temp;
+            j--;
+        }
+    }
+}
 ```
