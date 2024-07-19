@@ -1,4 +1,4 @@
-#Merge Sort is made up of 2 steps: Divide & Merge
+# Merge Sort is made up of 2 steps: Divide & Merge
 [3, 1, 2, 4, 1, 5, 2, 6, 4]
 ### Divide: Divides arr in equal halves down to base case, arr of size 1
 ```
