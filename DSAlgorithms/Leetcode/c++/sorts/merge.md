@@ -372,3 +372,7 @@ void merge_sort(std::vector<int> &arr, int low, int high)
     merge(arr, low, mid, high);
 }
 ```
+- Using head recursion:
+    - Divide arr in half until base case. 
+    - Upon reaching base cases, call the merge function which merges base cases/subarrays in sorted order.
+      this would be work done at return time on way back from recursion
