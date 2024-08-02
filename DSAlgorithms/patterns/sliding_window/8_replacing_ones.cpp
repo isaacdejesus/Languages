@@ -5,21 +5,21 @@ class replacing_ones {
     public:
         static int find_length(const std::vector<int>& arr, int k)
         {
-            int window_start = 0;
+            int l = 0;
             int max_length = 0;
             int max_ones_count = 0;
-            for(int window_end = 0; window_end < arr.size(); window_end++)
+            for(int r = 0; r < arr.size(); r++)
             {
 
-                if(arr[window_end] == 1)
+                if(arr[r] == 1)
                     max_ones_count++;
-                if(window_end - window_start + 1 - max_ones_count > k)
+                if(r - l + 1 - max_ones_count > k)
                 {
-                    if(arr[window_start] == 1)
+                    if(arr[l] == 1)
                         max_ones_count--;
-                    window_start++;
+                    l++;
                 }
-            max_length = std::max(max_length, window_end - window_start + 1);
+            max_length = std::max(max_length, r - l + 1);
             }
             return max_length;
         }
