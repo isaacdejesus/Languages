@@ -236,3 +236,26 @@ Set out of values .:. done. Return i -> 3
      done looping. return insert_index = 4
     ```
 - Ugh, pseudo and tracing don't match but you get the idea
+## Left rotate array by one place
+- Given an arr, left rotate by one place
+[1, 2, 3, 4, 5] -> [2, 3, 4, 5, 1]
+- Note left shifting by one causes all elements to shift to the left by one. First element becomes last
+- Loop from 1 to n - 1 setting arr[i - 1] = arr[i]
+- Finally set arr[n - 1] = arr[0]
+```
+temp = arr[0];
+for(i = 1; i < n; i++)
+    arr[i - 1] = arr[i];
+arr[n - 1] = temp;
+```
+- Time complexity O(n)
+- Space complexity O(1)
+
+## Left rotate arr by d places
+[1, 2, 3, 4, 5, 6, 7], d = 2  -> [3, 4, 5, 6, 7, 1, 2]
+[1, 2, 3, 4, 5, 6, 7], d = 3  -> [4, 5, 6, 7, 1, 2, 3]
+- Note if d = arr.size(), first d elements are appended to end of array, while remaining elements are shifted d times
+  to the left
+[1, 2, 3, 4, 5, 6, 7], d = 7  -> [1, 2, 3, 4, 5, 6, 7]
+- Note that if d/shift == arr.size() then result is input arr
+
