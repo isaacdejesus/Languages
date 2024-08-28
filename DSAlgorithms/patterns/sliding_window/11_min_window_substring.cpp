@@ -35,7 +35,7 @@ class min_window_substring
                         if(char_freq[left_char] == 0)
                             matched--;
                     }
-                    char_freq[left_char]++;
+                    char_freq[left_char]++;  //add char back to hash since it is going out of window
                 }
             }
             return min_length > str.length() ? "" : str.substr(substr_start, min_length);
