@@ -13,20 +13,20 @@ class word_concat
             std::vector<int> result_indices;
             int words_count = words.size();
             int word_length = words[0].length();
-            for(int i = 0; i <= str.length() - words_count * word_length; i++)
+            for(int c = 0; c <= str.length() - words_count * word_length; c++)
             {
                 std::unordered_map<std::string, int> words_seen;
-                for(int j = 0; j < words_count; j++)
+                for(int w = 0; w < words_count; w++)
                 {
-                    int next_word_index = i + j * word_length;
+                    int next_word_index = c + w * word_length;
                     std::string word = str.substr(next_word_index, word_length) ;
                     if(word_freq.find(word) == word_freq.end())
                         break;
                     words_seen[word]++;
                     if(words_seen[word] > word_freq[word])
                         break;
-                    if(j + 1 == words_count)
-                        result_indices.push_back(i);
+                    if(w + 1 == words_count)
+                        result_indices.push_back(c);
                 }
             }
             return result_indices;
