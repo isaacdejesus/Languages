@@ -1,0 +1,5 @@
+- Patterns
+- Basic math
+- Recursion
+- Sorting
+- Arrays
