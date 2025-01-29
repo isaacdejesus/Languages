@@ -118,7 +118,7 @@ void pattern_5(int n)
         std::cout<<'\n';
     }
 }
-``
+```
 ### Q: Code following pattern -
 ```
     1 2 3 4 5
