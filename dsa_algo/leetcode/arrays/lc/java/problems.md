@@ -18,7 +18,7 @@ public static int f(int[] nums)
     return Math.max(max_count, current_count);
 }
 ```
-## Find numbers with eveen number of digits
+## Find numbers with even number of digits
 - Given arr of ints, return how many contain an even number of digits
 ### Approach 1: Extract digits to determine if even
 ```java
@@ -30,9 +30,9 @@ public static boolean has_even_digits_2(int num)
     {
         digit_count++;
         num/=10;
-        }
-        return (digit_count & 1) == 0;
     }
+    return (digit_count & 1) == 0;
+}
 //extract digits from each number to determine if even
 public static boolean has_even_digits_1(int num)
 {
@@ -56,6 +56,20 @@ public static int f1(int[] nums)
             even_digit_count++;
     }
     return even_digit_count;
+}
+```
+- Note: return condition uses *bitwise AND* to check if number is even/odd. If least significant bit of
+  a number is 1 then number is odd.
+```java
+public static boolean has_even_digits_2(int num)
+{
+    int digit_count = 0;
+    while(num != 0)
+    {
+        digit_count++;
+        num/=10;
+    }
+    return (digit_count & 1) == 0;  //use &1 to determine if even or odd.
 }
 ```
 ### Approach 2: Convert number to string then use length to determine if even
