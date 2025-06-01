@@ -102,3 +102,48 @@ public static int f3(int[] nums)
     return even_digit_count;
 }
 ```
+## Sq of sorted arr
+- Given an arr of sorted ints, return arr of sq values sorted
+### O(nlogn) solution sq values then sort resulting arr
+```java
+public static int[] sorted_sq1(int[] nums)
+{
+    int arr_length = nums.length;
+    int[] ans = new int[arr_length];
+    for(int i = 0; i < arr_length; i++)
+        ans[i] = nums[i] * nums[i];
+    Arrays.sort(ans);  //O(nlogn) due to sort
+    return ans;
+}
+```
+### Optimal: 2 pointers
+- Since array is sorted iterate arr from outside in since largest positive and negative values will
+  be on the outside: 
+  [-4, -1, 0, 3, 10]
+    l            r
+- Compare int at pointer, taking largest, calc sq value and adding at end of result arr/in this case i
+```java
+public static int[] sorted_sq2(int[] nums)
+{
+    int arr_length = nums.length;
+    int[] result = new int[arr_length];
+    int left = 0;
+    int right = arr_length - 1;
+    for(int i = arr_length - 1; i >= 0; i--) //insert at the back of arr
+    {
+        int sq;
+        if(Math.abs(nums[left]) < Math.abs(nums[right]))
+        {
+            sq = nums[right];
+            right--;
+        }
+        else
+        {
+            sq = nums[left];
+            left++;
+        }
+        result[i] = sq * sq;
+    }
+    return result;
+}
+```
