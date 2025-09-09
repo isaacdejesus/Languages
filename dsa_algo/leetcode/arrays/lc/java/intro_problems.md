@@ -1,4 +1,4 @@
-## Max consecutive ones
+## # 485 Max consecutive ones
 - Given a binary array of containing only 0's and 1's, return max number of consecutive 1's in array
 ```java
 public static int f(int[] nums)
@@ -18,7 +18,7 @@ public static int f(int[] nums)
     return Math.max(max_count, current_count);
 }
 ```
-## Find numbers with even number of digits
+## # 1295 Find numbers with even number of digits
 - Given arr of ints, return how many contain an even number of digits
 ### Approach 1: Extract digits to determine if even
 ```java
@@ -102,7 +102,7 @@ public static int f3(int[] nums)
     return even_digit_count;
 }
 ```
-## Sq of sorted arr
+## # 977 Sq of sorted arr
 - Given an arr of sorted ints, return arr of sq values sorted
 ### O(nlogn) solution sq values then sort resulting arr
 ```java
