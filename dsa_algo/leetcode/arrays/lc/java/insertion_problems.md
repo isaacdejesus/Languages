@@ -290,3 +290,157 @@ Before: [1, 0, 0, 2, 3, 0, 0, 4]
          i/i + possible_duplicates     
 After:  [1, 0, 0, 2, 3, 0, 0, 4]
 ```
+Ugh, this is a really complex one tbh
+
+## #88 merge sorted array
+- Given sorted[int1] & sorted[int2] and two ints m & n representing the # of elements
+in each array. 
+- Merge sorted[int1] & sorted[int2] in sorted order. 
+- Final sorted[out] should not be returned. Should be stored in sorted[int1]
+- sorted[int1] has length m + n, where first m elements are elements of [int1] to be merged
+and last n elements are set to 0. [int2] has length n
+
+- Ex1
+```
+input 1 = [1, 2, 3, 0, 0, 0], m = 3
+input 2 = [2, 5, 6], n = 3
+output = [1, 2, 2, 3, 5, 6]
+```
+- Ex2
+```
+input 1 = [1], m = 1
+input 2 = [], n = 0
+output = [1]
+```
+- Ex3
+```
+input 1 = [0], m = 0
+input 2 = [1], n = 1
+output = [1]
+```
+### Approach
+- Use two pointers, one for each arr.
+- Compare values at pointers, inserting largest to the back of [int1] and decreasing pointer
+
+```java
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+       int p1 = m - 1;
+       int p2 = n - 1;
+       for(int insert_loc = m + n - 1; insert_loc >= 0; insert_loc--) 
+       {
+            if(p2 < 0) // all vals have been inserted. done
+                break;
+            if(p1 >= 0 && nums1[p1] > nums2[p2])
+                nums1[insert_loc] = nums1[p1--];
+            else
+                nums1[insert_loc] = nums2[p2--];
+       }
+    }
+}
+```
+### Walkthrough
+```
+input 1 = [1, 2, 3, 0, 0, 0], m = 3
+input 2 = [2, 5, 6], n = 3
+
+int p1 = m - 1; => 2
+int p2 = n - 1; => 2
+
+for(int insert_loc = m + n - 1; insert_loc >= 0; insert_loc--) 
+--->
+insert_loc = 3 + 3 - 1 = 5;
+```
+```
+insert_loc : 5
+p1 : 2
+p2 : 2
+input 1 = [1, 2, 3, 0, 0, 0]
+                 ^        ^
+                 p1       insert_loc
+input 2 = [2, 5, 6]
+                 ^
+                 p2
+if(p1 >= 0 && nums1[p1] > nums2[p2])
+    2 >= 0 &&        3 > 6  : No, go to else
+else
+    nums1[insert_loc] = nums2[p2--];
+    nums1[5] = nums2[p2--];
+    nums1[5] = nums2[6];
+
+out = [1, 2, 3, 0, 0, 6]
+insert_loc-- -> 4;
+p2-- -> 1
+```
+```
+insert_loc : 4
+p1 : 2
+p2 : 1
+input 1 = [1, 2, 3, 0, 0, 6]
+                 ^     ^
+                 p1    insert_loc
+input 2 = [2, 5, 6]
+              ^
+              p2
+
+if(p1 >= 0 && nums1[p1] > nums2[p2])
+    2 >= 0 &&        3 > 5  : No, go to else
+else
+    nums1[insert_loc] = nums2[p2--];
+    nums1[4] = nums2[p2--];
+    nums1[4] = nums2[1];
+out = [1, 2, 3, 0, 5, 6]
+insert_loc-- -> 3;
+p2-- -> 0
+```
+```
+insert_loc : 3
+p1 : 2
+p2 : 0
+input 1 = [1, 2, 3, 0, 5, 6]
+                 ^  ^
+                 p1 insert_loc
+input 2 = [2, 5, 6]
+           ^
+           p2
+
+if(p1 >= 0 && nums1[p1] > nums2[p2])
+    2 >= 0 &&        3 > 2  : Yes, insert
+    nums1[insert_loc] = nums1[p1--];
+    nums1[3] = nums1[2];
+out = [1, 2, 3, 3, 5, 6]
+insert_loc-- -> 2
+p1-- -> 1
+```
+```
+insert_loc : 2
+p1 : 1
+p2 : 0
+input 1 = [1, 2, 3, 3, 5, 6]
+              ^  ^
+              p1 insert_loc
+input 2 = [2, 5, 6]
+           ^
+           p2
+if(p1 >= 0 && nums1[p1] > nums2[p2])
+    1 >= 0 &&        2 > 2  : No, go to else
+
+else
+    nums1[insert_loc] = nums2[p2--];
+    nums1[2] = nums2[p2--];
+    nums1[2] = nums2[0];
+out = [1, 2, 2, 3, 5, 6]
+insert_loc-- -> 1
+p2-- -> -1
+```
+```
+insert_loc : 1
+p1 : 1
+p2 : -1
+
+if(p2 < 0) // all vals have been inserted. done
+    break;
+
+DONE
+output [ 1, 2, 2, 3, 5, 6]
+```
