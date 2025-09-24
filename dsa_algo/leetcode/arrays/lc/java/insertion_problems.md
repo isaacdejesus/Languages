@@ -96,7 +96,8 @@ l <= length_ - possible_duplicates
 if(arr[l] == 0)
    arr[0] == 0
        1  == 0: No, go to next iteration
------
+```
+```
 l : 1 
 l <= length_ - possible_duplicates 
 1 <= 7       - 0 
@@ -112,7 +113,8 @@ if(l == length_ - possible_duplicates)
    1 == 7       - 0: No, do nothing
 
 possible_duplicates++ => 1
------
+```
+```
 l : 2 
 l <= length_ - possible_duplicates 
 2 <= 7       - 1
@@ -123,7 +125,8 @@ Current l: [1, 0, 2, 3, 0, 4, 5, 0]
 if (arr[l] == 0)  
     arr[2] == 0: 
          2 == 0: No, go to next iteration
------
+```
+```
 l : 3
 l <= length_ - possible_duplicates
 3 <= 7       - 1
@@ -134,7 +137,8 @@ Current l: [1, 0, 2, 3, 0, 4, 5, 0]
 if (arr[l] == 0)  
     arr[3] == 0: 
          3 == 0: No, go to next iteration
------
+```
+```
 l : 4
 1 <= length_ - possible_duplicates
 4 <= 7       - 1
@@ -151,7 +155,8 @@ if(l == length_ - possible_duplicates)
    4 == 6: No, do nothing
 
 possible_duplicates++ => 2
------
+```
+```
 l : 5
 l <= length_ - possible_duplicates
 5 <= 7       - 2
@@ -162,7 +167,8 @@ if(arr[l] == 0)
    arr[5] == 0: No
         4 == 0: No, go to next iteration
 
------
+```
+```
 l : 6
 l <= length_ - possible_duplicates
 6 <= 7       - 2
@@ -196,7 +202,8 @@ possible_duplicates = 2;
 int last = length_ - possible_duplicates;
            7 - 2 = 5
 last = 5;
-
+```
+```
 i : 5
 i >= 0
 5 >= 0: Yes, check if.
@@ -209,7 +216,8 @@ arr[7] = 4
 Before: [1, 0, 2, 3, 0, 4, 5, 0]
                         i     i + possible_duplicates     
 After:  [1, 0, 2, 3, 0, 4, 5, 4]
------
+```
+```
 i : 4
 i >= 0
 4 >= 0: yes, check if
@@ -230,7 +238,8 @@ arr[5] = 0;
 Before: [1, 0, 2, 3, 0, 4, 0, 4]
                      i  i + possible_duplicates     
 After:  [1, 0, 2, 3, 0, 0, 0, 4]
------
+```
+```
 i : 3
 i >= 0
 3 >= 0: Yes, check if.
@@ -243,7 +252,8 @@ arr[4] = 3
 Before: [1, 0, 2, 3, 0, 0, 0, 4]
                   i  i + possible_duplicates     
 After:  [1, 0, 2, 3, 3, 0, 0, 4]
------
+```
+```
 i : 2
 i >= 0
 2 >= 0: Yes, check if.
@@ -256,7 +266,8 @@ arr[3] = 2
 Before: [1, 0, 2, 3, 3, 0, 0, 4]
                i  i + possible_duplicates     
 After:  [1, 0, 2, 2, 3, 0, 0, 4]
------
+```
+```
 i : 1
 i >= 0
 1 >= 0: Yes, check if.
@@ -277,7 +288,8 @@ arr[1] = 0;
 Before: [1, 0, 0, 2, 3, 0, 0, 4]
             i/i + possible_duplicates     
 After:  [1, 0, 0, 2, 3, 0, 0, 4]
------
+```
+```
 i : 0
 i >= 0
 0 >= 0: Yes, check if.
