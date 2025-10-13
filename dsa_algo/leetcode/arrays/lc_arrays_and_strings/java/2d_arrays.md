@@ -819,3 +819,143 @@ while(row < matrix_rows && col < matrix_cols)
 
 result = [1,2,4,7,5,3,6,8,9];
 ```
+## #54 Spiral matrix
+- Given matrix[m][n], return all elements in spiral order
+```
+in: [1  2  3
+     4  5  6 
+     7  8  9]
+out: [1, 2, 3, 6, 9, 8, 7, 4, 5]
+```
+```
+in : [1 2  3  4
+      5 6  7  8
+      9 10 11 12]
+out: [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
+```
+### Approach 1: Set boundaries
+- Time: O(rows x cols)
+- Space: O(1)
+```java
+class Solution {//Approach 1:  using boundaries
+                //Time: O(Rows * Cols), Space: O(1)
+    public List<Integer> spiralOrder(int[][] matrix)
+    {
+        List<Integer> result = new ArrayList<>();
+        int matrix_rows = matrix.length;
+        int matrix_cols = matrix[0].length;
+        int up = 0;
+        int left = 0;
+        int right = matrix_cols - 1;
+        int down = matrix_rows - 1;
+        while(result.size() < matrix_rows * matrix_cols)
+        {
+            //traverse left -> right
+            for(int col = left; col <= right; col++)
+                result.add(matrix[up][col]);
+            for(int row = up + 1; row <= down; row++)
+                result.add(matrix[row][right]);
+            if(up != down)
+                for(int col = right - 1; col >= left; col--)
+                    result.add(matrix[down][col]);
+            if(left != right)
+                for(int row = down - 1; row > up; row--)
+                    result.add(matrix[row][left]);
+            left++;
+            right--;
+            up++;
+            down--;
+        }
+        return result;
+    }
+}
+```
+### Approach 2: mark visited cells
+- Time: O(rows x cols)
+- Space: O(1)
+```java
+class Solution {//Approach 2:  Mark visiteed cells
+                //Time: O(Rows * Cols), Space: O(1)
+    public List<Integer> spiralOrder(int[][] matrix)
+    {
+        List<Integer> result = new ArrayList<>();
+        int matrix_rows = matrix.length;
+        int matrix_cols = matrix[0].length;
+        int visited = 101;
+        int[][] directions = {{0, 1}, {1,0}, {0, -1}, {-1, 0}};
+        int current_direction = 0;
+        int change_direction = 0;
+        int row = 0;
+        int col = 0;
+        result.add(matrix[0][0]);
+        matrix[0][0] = visited;
+        while(change_direction < 2)
+        {
+            while(
+                row + directions[current_direction][0] >= 0 &&
+                row + directions[current_direction][0] < matrix_rows &&
+                col + directions[current_direction][1] >= 0 &&
+                col + directions[current_direction][1] < matrix_cols &&
+                matrix[row + directions[current_direction][0]][col + directions[current_direction][1]] != visited
+            )
+                {
+                    change_direction = 0;
+                    row = row + directions[current_direction][0];
+                    col = col + directions[current_direction][1];
+                    result.add(matrix[row][col]);
+                    matrix[row][col] = visited;
+                }
+            change_direction = (current_direction + 1) % 4;
+            change_direction++;
+        }
+        return result;
+    }
+}
+```
+## 118 Pascal's triangle
+- Given an int numrows, return the first numrows of pascal's triangle
+- In pascal's triangle, every number is the sum of the 2 numbers direectly above it. 
+```
+        1
+       1 1
+      1 2 1
+     1 3 3 1
+    1 4 6 4 1
+
+in : numrows : 5
+out : [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
+
+in : numrows : 1
+out : [[1]]
+```
+### Approach: Dynamic programming
+```java
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> triangle = new ArrayList<List<Integer>>();
+        triangle.add(new ArrayList<>());
+        triangle.get(0).add(1);  //insert 0th row with single [1]
+        //iterate to create rows [1, size] [1, 5]
+        for(int row_num = 1; row_num < numRows; row_num++)
+        {
+            List<Integer> current_row = new ArrayList<>();
+            List<Integer> prev_row = triangle.get(row_num - 1);
+            current_row.add(1); //ea row has [0] in 0th index
+            for(int i = 1; i < row_num; i++) //loop and calc current row
+                current_row.add(prev_row.get(i - 1) + prev_row.get(i));
+            current_row.add(1); //ea row ends with [0] in last index
+            triangle.add(current_row); //add current row to triangle
+        }
+        return triangle;
+    }
+}
+```
+- Result is a 2d array called triangle.
+- First/0th row contains a single [1]
+- Iterate to create the remaining rows [1, length]
+- For ea row: 
+    - create a new empty arr
+    - insert [1] start of arr
+    - loop [1, size of row] calculating value for each [i]
+    - insert [1] at end of arr
+- insert newly created row to triangle
