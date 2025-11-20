@@ -15,6 +15,13 @@ python filename.py
 ```
 ts-node filename.ts
 ```
+## C#
+- .cs file. Not a project
+```
+- csc filename.cs
+- mono filename.exe
+```
+
 
 
 
