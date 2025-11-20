@@ -2,7 +2,7 @@
 - Quicksort works by selecting a pivot element and placing pivot in correct sorted location.
     - Select Pivot - Think of it as subarrays
         - Shift elements < pivot to left of pivot - Think as subarray of elements < pivot to the left of pivot
-        - Shift elements > pibot to right of pivot - Think as subarray of elements > pivot to the right of pivot
+        - Shift elements > pivot to right of pivot - Think as subarray of elements > pivot to the right of pivot
 - When algo is done placing all elements in correct sorted location, entire array will be sorted
 - Pivot can be any element. Ideally, it is the mid element for better complexity but we will use first element 
 ```
@@ -55,10 +55,12 @@ Combine sorted arr: left + pivot + right
 
 ### pseudocode
 - Sort in place by using pointers to determine where left and right subarrays start and end like on merge sort
+```
 [4, 6, 2, 5, 7, 9, 1, 3]
  0  1  2  3  4  5  6  7             <-- indexes
 low                  high          <-- low and high mark start and end of arr
 pivot = arr[low]                   <-- recall pivot can be anything. we use first element of arr/subarr
+```
 - Rearranging arr to place pivot in correct location:
     - Shift elements > p to right of pivot.
     - Shift elements < p to left of pivot. 
