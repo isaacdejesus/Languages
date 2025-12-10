@@ -204,7 +204,7 @@ Set out of values .:. done. Return i -> 3
     - If currnt == first, continue
     - if current != first, insert current at next slot
     - Repeat
-    ```
+```
     insert_index = 0
     for(i = 1; i < n; i++)
 {
@@ -234,7 +234,7 @@ Set out of values .:. done. Return i -> 3
               insert_index
      i = 6, previous: 3. 3 == 3, continue
      done looping. return insert_index = 4
-    ```
+```
 - Ugh, pseudo and tracing don't match but you get the idea
 ## Left rotate array by one place
 - Given an arr, left rotate by one place
